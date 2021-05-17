@@ -29,9 +29,36 @@ public final class FlightsViewModel {
         self.flightsService = FlightsServiceItem()
     }
     
-    public func loadFlights() {
-        let sampleBody = FlightsServiceRequest(date: "2021-05-15", operation: "L")
-        flightsService.getFlights(sampleBody) { [weak self] result in
+    public func getFlight(for indexPath: IndexPath) -> FlightViewModel {
+        let flight = flights[indexPath.row]
+        return FlightViewModel(flight)
+    }
+    
+}
+
+extension FlightsViewModel {
+    
+    public func loadInternationalArrival(for date: Date = Date()) {
+        load(for: date, type: .arrival, origin: .international)
+    }
+    
+    public func loadNationalArrival(for date: Date = Date()) {
+        load(for: date, type: .arrival, origin: .national)
+    }
+    
+    public func loadInternationalDeparture(for date: Date = Date()) {
+        load(for: date, type: .departure, origin: .international)
+    }
+    
+    public func loadNationalDeparture(for date: Date = Date()) {
+        load(for: date, type: .departure, origin: .national)
+    }
+    
+    private func load(for date: Date, type: FlightType, origin: FlightOriginType? = nil) {
+        let body = FlightsServiceRequest(date: date.toRequestFormat(),
+                                         operation: type.rawValue,
+                                         origin: origin?.rawValue)
+        flightsService.getFlights(body) { [weak self] result in
             switch (result) {
             case .success(let response):
                 print(response.flights)
@@ -42,8 +69,4 @@ public final class FlightsViewModel {
         }
     }
     
-    public func getFlight(for indexPath: IndexPath) -> FlightViewModel {
-        let flight = flights[indexPath.row]
-        return FlightViewModel(flight)
-    }
 }

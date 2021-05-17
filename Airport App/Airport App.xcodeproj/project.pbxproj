@@ -35,6 +35,8 @@
 		259AC8842650880A00CA9C85 /* Bond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC8832650880A00CA9C85 /* Bond.swift */; };
 		259AC8892650890900CA9C85 /* BondBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC8882650890900CA9C85 /* BondBox.swift */; };
 		259AC88F265094E300CA9C85 /* UILable+Bond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC88E265094E300CA9C85 /* UILable+Bond.swift */; };
+		25BD72D12651FD9E008DA384 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD72D02651FD9E008DA384 /* Configuration.swift */; };
+		25BD73962652009C008DA384 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD73952652009C008DA384 /* Date+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		259AC8832650880A00CA9C85 /* Bond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bond.swift; sourceTree = "<group>"; };
 		259AC8882650890900CA9C85 /* BondBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondBox.swift; sourceTree = "<group>"; };
 		259AC88E265094E300CA9C85 /* UILable+Bond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable+Bond.swift"; sourceTree = "<group>"; };
+		25BD72D02651FD9E008DA384 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		25BD73952652009C008DA384 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 				255F7123263B4C6600EF8B2C /* Method.swift */,
 				255F712B263B4F3500EF8B2C /* Client.swift */,
 				255F7130263B4F5200EF8B2C /* ClientProtocol.swift */,
+				25BD72D02651FD9E008DA384 /* Configuration.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 				25975F5D261F606A00370915 /* Models */,
 				2589F3822622B18D00272D38 /* Services */,
 				255F7115263B4AAE00EF8B2C /* Network */,
+				25BD73932652007F008DA384 /* Foundation */,
 				25975F33261F5FE700370915 /* Assets.xcassets */,
 				25975F38261F5FE700370915 /* Info.plist */,
 			);
@@ -266,6 +272,14 @@
 				259AC88E265094E300CA9C85 /* UILable+Bond.swift */,
 			);
 			path = "Views+Bond";
+			sourceTree = "<group>";
+		};
+		25BD73932652007F008DA384 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				25BD73952652009C008DA384 /* Date+Utils.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +426,7 @@
 				259AC8842650880A00CA9C85 /* Bond.swift in Sources */,
 				255F7117263B4ABB00EF8B2C /* API.swift in Sources */,
 				255F712C263B4F3500EF8B2C /* Client.swift in Sources */,
+				25BD73962652009C008DA384 /* Date+Utils.swift in Sources */,
 				2589F3972622B3B600272D38 /* FlightsServiceItem.swift in Sources */,
 				259AC87F2650871A00CA9C85 /* Dynamic.swift in Sources */,
 				2572149A264665500000BE1C /* FlightServiceResponse.swift in Sources */,
@@ -419,6 +434,7 @@
 				255F7124263B4C6600EF8B2C /* Method.swift in Sources */,
 				2589F3842622B1A400272D38 /* FlightsService.swift in Sources */,
 				25975F2B261F5FE600370915 /* AppDelegate.swift in Sources */,
+				25BD72D12651FD9E008DA384 /* Configuration.swift in Sources */,
 				255F7131263B4F5200EF8B2C /* ClientProtocol.swift in Sources */,
 				25975F2D261F5FE600370915 /* SceneDelegate.swift in Sources */,
 			);

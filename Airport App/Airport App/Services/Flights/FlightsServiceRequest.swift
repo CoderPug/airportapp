@@ -10,20 +10,20 @@ import Foundation
 public struct FlightsServiceRequest {
     
     let date: String
-    let operation: String
+    let operation: String?
     let destination: String?
     let origin: String?
     let flight: String?
     
     init(date: String,
-         operation: String,
-         destination: String? = nil,
+         operation: String? = nil,
          origin: String? = nil,
+         destination: String? = nil,
          flight: String? = nil) {
         self.date = date
         self.operation = operation
-        self.destination = destination
         self.origin = origin
+        self.destination = destination
         self.flight = flight
     }
 }
@@ -31,12 +31,12 @@ public struct FlightsServiceRequest {
 // MARK: Encodable
 
 extension FlightsServiceRequest: Encodable {
+    
     enum CodingKeys: String, CodingKey {
-        
         case date = "fecha"
         case operation = "operacion"
-        case destination = "destino"
         case origin = "origen"
+        case destination = "destino"
         case flight = "vuelo"
     }
 }

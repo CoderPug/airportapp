@@ -10,8 +10,7 @@ import Foundation
 public struct Client {
     
     func url(path: Path) -> URL {
-        let domain = URL(string: "https://www.lima-airport.com/_vti_bin/portal/services.svc/")!
-        return domain.appendingPathComponent(path)
+        return Configuration.serverURL.appendingPathComponent(path)
     }
 }
 

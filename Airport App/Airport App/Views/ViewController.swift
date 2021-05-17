@@ -10,7 +10,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    private let flightsViewModel = FlightsViewModel()
+    
+    private lazy var flightsViewModel: FlightsViewModel = {
+        return FlightsViewModel()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,7 @@ class ViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }
-        flightsViewModel.loadFlights()
+        flightsViewModel.loadInternationalDeparture()
     }
 }
 
@@ -50,11 +53,21 @@ extension ViewController: UITableViewDataSource {
         cell.code.textBond.bind(flightViewModel.code)
         cell.airline.textBond.bind(flightViewModel.airline)
         cell.destination.textBond.bind(flightViewModel.destination)
+        cell.hour.textBond.bind(flightViewModel.hour)
+        cell.counter.textBond.bind(flightViewModel.carousel)
+        cell.gate.textBond.bind(flightViewModel.gate)
+        cell.date.textBond.bind(flightViewModel.date)
+        cell.remarks.textBond.bind(flightViewModel.state)
         
         flightViewModel.code.value = flightViewModel.code.value
         flightViewModel.airline.value = flightViewModel.airline.value
         flightViewModel.destination.value = flightViewModel.destination.value
-
+        flightViewModel.hour.value = flightViewModel.hour.value
+        flightViewModel.carousel.value = flightViewModel.carousel.value
+        flightViewModel.gate.value = flightViewModel.gate.value
+        flightViewModel.date.value = flightViewModel.date.value
+        flightViewModel.state.value = flightViewModel.state.value
+        
         return cell
     }
     
