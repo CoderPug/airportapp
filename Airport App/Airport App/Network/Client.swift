@@ -14,6 +14,8 @@ public struct Client {
     }
 }
 
+// MARK: Protocol
+
 extension Client: ClientProtocol {
     
     public func request<Response: Decodable>(_ endpoint: Endpoint<Response>,

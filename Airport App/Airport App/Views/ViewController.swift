@@ -12,7 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     private lazy var flightsViewModel: FlightsViewModel = {
-        return FlightsViewModel()
+        return FlightsViewModel(service: FlightsServiceItem())
+//        return FlightsViewModel(service: MockFlightsServiceItem(type: .multiple))
     }()
     
     override func viewDidLoad() {
@@ -24,9 +25,11 @@ class ViewController: UIViewController {
                 self?.tableView.reloadData()
             }
         }
-        flightsViewModel.loadInternationalDeparture()
+        flightsViewModel.loadNationalDeparture()
     }
 }
+
+// MARK: Delegates
 
 extension ViewController: UITableViewDelegate {
         
@@ -42,8 +45,9 @@ extension ViewController: UITableViewDataSource {
         
         let cell = tableView.dequeReusableCell(FlightCell.self)
         
-        let flightViewModel = flightsViewModel.getFlight(for: indexPath)
-        
+        guard let flightViewModel = flightsViewModel.getFlight(for: indexPath) else {
+            return cell
+        }        
 //        let e: (String) -> Void = { element in
 //            cell.code.text = element
 //        }
@@ -56,7 +60,6 @@ extension ViewController: UITableViewDataSource {
         cell.hour.textBond.bind(flightViewModel.hour)
         cell.counter.textBond.bind(flightViewModel.carousel)
         cell.gate.textBond.bind(flightViewModel.gate)
-        cell.date.textBond.bind(flightViewModel.date)
         cell.remarks.textBond.bind(flightViewModel.state)
         
         flightViewModel.code.value = flightViewModel.code.value
@@ -64,11 +67,9 @@ extension ViewController: UITableViewDataSource {
         flightViewModel.destination.value = flightViewModel.destination.value
         flightViewModel.hour.value = flightViewModel.hour.value
         flightViewModel.carousel.value = flightViewModel.carousel.value
-        flightViewModel.gate.value = flightViewModel.gate.value
         flightViewModel.date.value = flightViewModel.date.value
         flightViewModel.state.value = flightViewModel.state.value
         
         return cell
     }
-    
 }

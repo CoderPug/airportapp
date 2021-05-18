@@ -22,5 +22,4 @@ extension UITableView {
         }
         return cell
     }
-    
 }

@@ -10,7 +10,7 @@ import UIKit
 
 public final class FlightsViewModel {
     
-    private var flightsService: FlightsServiceItem
+    private var flightsService: FlightsService
     private var flightServiceRequest: FlightsServiceRequest?
     
     private var flights: [Flight] {
@@ -19,22 +19,24 @@ public final class FlightsViewModel {
         }
     }
     
-    public var reloadTableViewClosure: (() -> ())?
+    public var reloadTableViewClosure: (() -> Void)?
     public var numberOfItems: Int {
         return flights.count
     }
-        
-    init() {
+    
+    init(service: FlightsService) {
         self.flights = []
-        self.flightsService = FlightsServiceItem()
+        self.flightsService = service
     }
     
-    public func getFlight(for indexPath: IndexPath) -> FlightViewModel {
+    public func getFlight(for indexPath: IndexPath) -> FlightViewModel? {
+        guard self.flights.count > indexPath.row else { return nil }
         let flight = flights[indexPath.row]
         return FlightViewModel(flight)
     }
-    
 }
+
+// MARK: Intents
 
 extension FlightsViewModel {
     
@@ -61,12 +63,11 @@ extension FlightsViewModel {
         flightsService.getFlights(body) { [weak self] result in
             switch (result) {
             case .success(let response):
-                print(response.flights)
+//                print(response.flights)
                 self?.flights = response.flights
             case .failure(let error):
                 print(error)
             }
         }
-    }
-    
+    }    
 }

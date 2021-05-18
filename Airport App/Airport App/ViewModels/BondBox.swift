@@ -13,6 +13,5 @@ class BondBox<T> {
     
     init(_ bond: Bond<T>) {
         self.bond = bond
-    }
-    
+    }    
 }

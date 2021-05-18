@@ -19,6 +19,5 @@ class Bond<T> {
     
     func bind(_ dynamic: Dynamic<T>) {
         dynamic.bonds.append(BondBox(self))
-    }
-    
+    }    
 }

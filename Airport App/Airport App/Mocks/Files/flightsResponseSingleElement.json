@@ -1,0 +1,21 @@
+{
+    "Resultados": [
+        {
+            "aerolinea": "AMERICAN AIRLINES",
+            "codvuelo": "AA385",
+            "destino": "MIAMI",
+            "estado": "ATERRIZO",
+            "fechaprogramada": "2021-04-06",
+            "horaestimada": "00:08",
+            "horaprogramada": "00:20",
+            "nrovuelo": "385",
+            "numfaja": "6",
+            "puertaembarque": "",
+            "tipope": "L",
+            "tiporigen": "I"
+        }
+    ],
+    "Today": true,
+    "Tomorrow": true,
+    "Yesterday": true
+}

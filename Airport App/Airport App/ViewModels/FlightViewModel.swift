@@ -18,6 +18,8 @@ public final class FlightViewModel {
     var hour: Dynamic<String>
     var gate: Dynamic<String>
     var carousel: Dynamic<String>
+    let type: FlightType
+    let originType: FlightOriginType
     
     init(_ flight: Flight) {
         self.airline = Dynamic(flight.airline)
@@ -30,6 +32,7 @@ public final class FlightViewModel {
         self.hour = Dynamic(flight.scheduledHour)
         self.gate = Dynamic(flight.boardingGate ?? "-")
         self.carousel = Dynamic(flight.baggageCarousel)
+        self.type = flight.flightType
+        self.originType = flight.flightOriginType
     }
-
 }

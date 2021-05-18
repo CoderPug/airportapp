@@ -19,6 +19,5 @@ extension UILabel {
             objc_setAssociatedObject(self, &handle, b, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             return b
         }
-    }
-    
+    }    
 }
