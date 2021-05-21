@@ -12,18 +12,24 @@ public final class FlightsViewModel {
     
     private var flightsService: FlightsService
     private var flightServiceRequest: FlightsServiceRequest?
-    
+        
     private var flights: [Flight] {
         didSet {
             self.reloadTableViewClosure?()
         }
     }
+    private var error: Error? {
+        didSet {
+            self.errorClosure?()
+        }
+    }
     
     public var reloadTableViewClosure: (() -> Void)?
+    public var errorClosure: (() -> Void)?
     public var numberOfItems: Int {
         return flights.count
     }
-    
+        
     init(service: FlightsService) {
         self.flights = []
         self.flightsService = service
@@ -63,11 +69,10 @@ extension FlightsViewModel {
         flightsService.getFlights(body) { [weak self] result in
             switch (result) {
             case .success(let response):
-//                print(response.flights)
                 self?.flights = response.flights
             case .failure(let error):
-                print(error)
+                self?.error = error
             }
         }
-    }    
+    }
 }

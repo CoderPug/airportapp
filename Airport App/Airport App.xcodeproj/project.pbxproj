@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2538AD5826534E7D00C05703 /* MockFlightsServiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2538AD5726534E7D00C05703 /* MockFlightsServiceItem.swift */; };
-		2538AD6B2653500900C05703 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2538AD6A2653500900C05703 /* Error.swift */; };
+		2538AD6B2653500900C05703 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2538AD6A2653500900C05703 /* NetworkError.swift */; };
 		2538AD7026535F7D00C05703 /* FlightsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2538AD6F26535F7D00C05703 /* FlightsViewModelTests.swift */; };
 		2538AD7526535FF300C05703 /* FlightsServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2538AD7426535FF300C05703 /* FlightsServiceTests.swift */; };
 		2538AD872653704900C05703 /* MockFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2538AD862653704900C05703 /* MockFile.swift */; };
@@ -47,8 +47,13 @@
 		259AC8842650880A00CA9C85 /* Bond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC8832650880A00CA9C85 /* Bond.swift */; };
 		259AC8892650890900CA9C85 /* BondBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC8882650890900CA9C85 /* BondBox.swift */; };
 		259AC88F265094E300CA9C85 /* UILable+Bond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC88E265094E300CA9C85 /* UILable+Bond.swift */; };
+		25A786B42657D8AB00F669AA /* FlightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786B32657D8AB00F669AA /* FlightState.swift */; };
+		25A786B92657D8BF00F669AA /* FlightOriginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786B82657D8BF00F669AA /* FlightOriginType.swift */; };
+		25A786BE2657D8CE00F669AA /* FlightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786BD2657D8CE00F669AA /* FlightType.swift */; };
+		25A786C92657FFFF00F669AA /* DecodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786C82657FFFF00F669AA /* DecodableError.swift */; };
 		25BD72D12651FD9E008DA384 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD72D02651FD9E008DA384 /* Configuration.swift */; };
 		25BD73962652009C008DA384 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD73952652009C008DA384 /* Date+Utils.swift */; };
+		25FE23AC26572C78007F4A3A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FE23AB26572C78007F4A3A /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +75,7 @@
 
 /* Begin PBXFileReference section */
 		2538AD5726534E7D00C05703 /* MockFlightsServiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFlightsServiceItem.swift; sourceTree = "<group>"; };
-		2538AD6A2653500900C05703 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		2538AD6A2653500900C05703 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		2538AD6F26535F7D00C05703 /* FlightsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewModelTests.swift; sourceTree = "<group>"; };
 		2538AD7426535FF300C05703 /* FlightsServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsServiceTests.swift; sourceTree = "<group>"; };
 		2538AD862653704900C05703 /* MockFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFile.swift; sourceTree = "<group>"; };
@@ -115,8 +120,13 @@
 		259AC8832650880A00CA9C85 /* Bond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bond.swift; sourceTree = "<group>"; };
 		259AC8882650890900CA9C85 /* BondBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondBox.swift; sourceTree = "<group>"; };
 		259AC88E265094E300CA9C85 /* UILable+Bond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable+Bond.swift"; sourceTree = "<group>"; };
+		25A786B32657D8AB00F669AA /* FlightState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightState.swift; sourceTree = "<group>"; };
+		25A786B82657D8BF00F669AA /* FlightOriginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOriginType.swift; sourceTree = "<group>"; };
+		25A786BD2657D8CE00F669AA /* FlightType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightType.swift; sourceTree = "<group>"; };
+		25A786C82657FFFF00F669AA /* DecodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableError.swift; sourceTree = "<group>"; };
 		25BD72D02651FD9E008DA384 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		25BD73952652009C008DA384 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		25FE23AB26572C78007F4A3A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +187,7 @@
 				255F712B263B4F3500EF8B2C /* Client.swift */,
 				255F7130263B4F5200EF8B2C /* ClientProtocol.swift */,
 				25BD72D02651FD9E008DA384 /* Configuration.swift */,
-				2538AD6A2653500900C05703 /* Error.swift */,
+				2538AD6A2653500900C05703 /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -264,6 +274,10 @@
 			isa = PBXGroup;
 			children = (
 				25975F60261F60C000370915 /* Flight.swift */,
+				25A786B32657D8AB00F669AA /* FlightState.swift */,
+				25A786B82657D8BF00F669AA /* FlightOriginType.swift */,
+				25A786BD2657D8CE00F669AA /* FlightType.swift */,
+				25A786C82657FFFF00F669AA /* DecodableError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -313,6 +327,7 @@
 		259AC87D2650836900CA9C85 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				25FE23A726572C30007F4A3A /* SectionHeader */,
 				259AC87C2650835900CA9C85 /* FlightCell */,
 			);
 			path = Cells;
@@ -332,6 +347,14 @@
 				25BD73952652009C008DA384 /* Date+Utils.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		25FE23A726572C30007F4A3A /* SectionHeader */ = {
+			isa = PBXGroup;
+			children = (
+				25FE23AB26572C78007F4A3A /* SectionHeader.swift */,
+			);
+			path = SectionHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -474,9 +497,11 @@
 			files = (
 				259AC8892650890900CA9C85 /* BondBox.swift in Sources */,
 				2589F39C2622B73C00272D38 /* FlightsViewModel.swift in Sources */,
+				25A786B42657D8AB00F669AA /* FlightState.swift in Sources */,
 				257214A62646687D0000BE1C /* API+Flights.swift in Sources */,
 				25975F2F261F5FE600370915 /* ViewController.swift in Sources */,
 				259AC8642650717600CA9C85 /* FlightCell.swift in Sources */,
+				25A786C92657FFFF00F669AA /* DecodableError.swift in Sources */,
 				25975F61261F60C000370915 /* Flight.swift in Sources */,
 				259AC87726507A8300CA9C85 /* UITableView+Utils.swift in Sources */,
 				2589F38F2622B24700272D38 /* FlightsServiceRequest.swift in Sources */,
@@ -486,9 +511,11 @@
 				255F7117263B4ABB00EF8B2C /* API.swift in Sources */,
 				255F712C263B4F3500EF8B2C /* Client.swift in Sources */,
 				25BD73962652009C008DA384 /* Date+Utils.swift in Sources */,
+				25A786BE2657D8CE00F669AA /* FlightType.swift in Sources */,
 				2589F3972622B3B600272D38 /* FlightsServiceItem.swift in Sources */,
 				2538AD5826534E7D00C05703 /* MockFlightsServiceItem.swift in Sources */,
-				2538AD6B2653500900C05703 /* Error.swift in Sources */,
+				25A786B92657D8BF00F669AA /* FlightOriginType.swift in Sources */,
+				2538AD6B2653500900C05703 /* NetworkError.swift in Sources */,
 				259AC87F2650871A00CA9C85 /* Dynamic.swift in Sources */,
 				2572149A264665500000BE1C /* FlightServiceResponse.swift in Sources */,
 				259AC85F26506F9500CA9C85 /* FlightViewModel.swift in Sources */,
@@ -496,6 +523,7 @@
 				2589F3842622B1A400272D38 /* FlightsService.swift in Sources */,
 				25975F2B261F5FE600370915 /* AppDelegate.swift in Sources */,
 				25BD72D12651FD9E008DA384 /* Configuration.swift in Sources */,
+				25FE23AC26572C78007F4A3A /* SectionHeader.swift in Sources */,
 				255F7131263B4F5200EF8B2C /* ClientProtocol.swift in Sources */,
 				2538AD872653704900C05703 /* MockFile.swift in Sources */,
 				25975F2D261F5FE600370915 /* SceneDelegate.swift in Sources */,

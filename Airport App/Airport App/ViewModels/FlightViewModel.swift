@@ -26,7 +26,7 @@ public final class FlightViewModel {
         self.code = Dynamic(flight.code)
         self.flightNumber = Dynamic(flight.flightNumber)
         self.destination = Dynamic(flight.destination)
-        self.state = Dynamic(flight.state)
+        self.state = Dynamic(flight.state.value())
         let date = Date.from(flight.scheduledDate)
         self.date = Dynamic(date?.toPresentationFormat() ?? "")
         self.hour = Dynamic(flight.scheduledHour)

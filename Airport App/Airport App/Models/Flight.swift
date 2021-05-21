@@ -7,22 +7,12 @@
 
 import Foundation
 
-enum FlightType: String {
-    case arrival = "L"
-    case departure = "S"
-}
-
-enum FlightOriginType: String {
-    case national = "N"
-    case international = "I"
-}
-
 struct Flight {
     
     let airline: String
     let code: String
     let destination: String
-    let state: String
+    let state: FlightState
     let scheduledDate: String
     let scheduledHour: String
     let estimatedHour: String
@@ -34,10 +24,6 @@ struct Flight {
 }
 
 // MARK: Decodable
-
-extension FlightType: Decodable { }
-
-extension FlightOriginType: Decodable { }
 
 extension Flight: Decodable {
     
@@ -54,5 +40,29 @@ extension Flight: Decodable {
         case boardingGate = "puertaembarque"
         case flightType = "tipope"
         case flightOriginType = "tiporigen"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        airline = try values.decode(String.self, forKey: .airline)
+        destination = try values.decode(String.self, forKey: .destination)
+        code = try values.decode(String.self, forKey: .code)
+        scheduledDate = try values.decode(String.self, forKey: .scheduledDate)
+        scheduledHour = try values.decode(String.self, forKey: .scheduledHour)
+        estimatedHour = try values.decode(String.self, forKey: .estimatedHour)
+        flightNumber = try values.decode(String.self, forKey: .flightNumber)
+        baggageCarousel = try values.decode(String.self, forKey: .baggageCarousel)
+        boardingGate = try values.decodeIfPresent(String.self, forKey: .boardingGate)
+        flightOriginType = try values.decode(FlightOriginType.self, forKey: .flightOriginType)
+        flightType = try values.decode(FlightType.self, forKey: .flightType)
+
+        switch flightType {
+        case .arrival:
+            let object = try? values.decode(ArrivalState.self, forKey: .state)
+            state = .arrivalState(arrivalState: object ?? .unknown)
+        case .departure:
+            let object = try? values.decode(DepartureState.self, forKey: .state)
+            state = .departureState(departureState: object ?? .unknown)
+        }
     }
 }

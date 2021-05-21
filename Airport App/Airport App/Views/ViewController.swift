@@ -11,21 +11,28 @@ class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     
+//        return FlightsViewModel(service: MockFlightsServiceItem(type: .multiple))
     private lazy var flightsViewModel: FlightsViewModel = {
         return FlightsViewModel(service: FlightsServiceItem())
-//        return FlightsViewModel(service: MockFlightsServiceItem(type: .multiple))
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(FlightCell.self)
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 20.0
+        setupViewModelClosures()
+        
+        flightsViewModel.loadInternationalDeparture()
+    }
+    
+    private func setupViewModelClosures() {
         flightsViewModel.reloadTableViewClosure = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
         }
-        flightsViewModel.loadNationalDeparture()
     }
 }
 
@@ -36,6 +43,12 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: UITableViewDataSource {
+        
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = SectionHeader(width: tableView.bounds.width)
+        headerView.title.text = "19 Mayo 2021"
+        return headerView
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return flightsViewModel.numberOfItems
@@ -47,7 +60,7 @@ extension ViewController: UITableViewDataSource {
         
         guard let flightViewModel = flightsViewModel.getFlight(for: indexPath) else {
             return cell
-        }        
+        }
 //        let e: (String) -> Void = { element in
 //            cell.code.text = element
 //        }

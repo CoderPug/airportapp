@@ -41,9 +41,13 @@ extension Client: ClientProtocol {
                 completionHandler(.failure(error!))
                 return
             }
-            let response = try! JSONDecoder().decode(Response.self, from: data)
-            print(response)
-            completionHandler(.success(response))
+            do {
+                let response = try JSONDecoder().decode(Response.self, from: data)
+                print(response)
+                completionHandler(.success(response))
+            } catch {
+                completionHandler(.failure(error))
+            }
         }
         dataTask.resume()
     }
