@@ -5,7 +5,6 @@
 //  Created by Jose Torres on 5/20/21.
 //
 
-import Foundation
 import UIKit
 
 final class SectionHeader: UIView {

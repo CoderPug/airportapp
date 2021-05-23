@@ -44,6 +44,15 @@ extension FlightState {
             return state.value()
         }
     }
+    
+    public func color() -> (Double, Double, Double) {
+        switch self {
+        case .arrivalState(arrivalState: let state):
+            return state.color()
+        case .departureState(departureState: let state):
+            return state.color()
+        }
+    }
 }
 
 extension ArrivalState {
@@ -62,6 +71,23 @@ extension ArrivalState {
             return "Aterrizo".uppercased()
         case .unknown:
             return "-"
+        }
+    }
+    
+    public func color() -> (Double, Double, Double) {
+        switch self {
+        case .scheduled:
+            return (73.0/255.0, 88.0/255.0, 103.0/255.0)
+        case .confirmed:
+            return (73.0/255.0, 88.0/255.0, 103.0/255.0)
+        case .delayed:
+            return (255.0/255.0, 133.0/255.0, 82.0/255.0)
+        case .canceled:
+            return (249.0/255.0, 65.0/255.0, 68.0/255.0)
+        case .landed:
+            return (87.0/255.0, 204.0/255.0, 153.0/255.0)
+        case .unknown:
+            return (73.0/255.0, 88.0/255.0, 103.0/255.0)
         }
     }
 }
@@ -86,6 +112,27 @@ extension DepartureState {
             return "Cancelado".uppercased()
         case .unknown:
             return "-"
+        }
+    }
+    
+    public func color() -> (Double, Double, Double) {
+        switch self {
+        case .scheduled:
+            return (73.0/255.0, 88.0/255.0, 103.0/255.0)
+        case .confirmed:
+            return (73.0/255.0, 88.0/255.0, 103.0/255.0)
+        case .delayed:
+            return (255.0/255.0, 133.0/255.0, 82.0/255.0)
+        case .boarding:
+            return (255.0/255.0, 200.0/255.0, 87.0/255.0)
+        case .lastCall:
+            return (255.0/255.0, 200.0/255.0, 87.0/255.0)
+        case .boarded:
+            return (87.0/255.0, 204.0/255.0, 153.0/255.0)
+        case .canceled:
+            return (249.0/255.0, 65.0/255.0, 68.0/255.0)
+        case .unknown:
+            return (73.0/255.0, 88.0/255.0, 103.0/255.0)
         }
     }
 }

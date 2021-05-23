@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 public final class FlightViewModel {
     
@@ -20,7 +21,8 @@ public final class FlightViewModel {
     var carousel: Dynamic<String>
     let type: FlightType
     let originType: FlightOriginType
-    
+    let stateColor: UIColor
+        
     init(_ flight: Flight) {
         self.airline = Dynamic(flight.airline)
         self.code = Dynamic(flight.code)
@@ -34,5 +36,10 @@ public final class FlightViewModel {
         self.carousel = Dynamic(flight.baggageCarousel)
         self.type = flight.flightType
         self.originType = flight.flightOriginType
+        let color = flight.state.color()
+        self.stateColor = UIColor(red: CGFloat(color.0),
+                                  green: CGFloat(color.1),
+                                  blue: CGFloat(color.2),
+                                  alpha: 1.0)
     }
 }

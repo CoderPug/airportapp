@@ -61,6 +61,8 @@ extension ViewController: UITableViewDataSource {
         guard let flightViewModel = flightsViewModel.getFlight(for: indexPath) else {
             return cell
         }
+        cell.setup(with: flightViewModel.state.value, color: flightViewModel.stateColor)
+        
 //        let e: (String) -> Void = { element in
 //            cell.code.text = element
 //        }

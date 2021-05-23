@@ -47,6 +47,7 @@
 		259AC8842650880A00CA9C85 /* Bond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC8832650880A00CA9C85 /* Bond.swift */; };
 		259AC8892650890900CA9C85 /* BondBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC8882650890900CA9C85 /* BondBox.swift */; };
 		259AC88F265094E300CA9C85 /* UILable+Bond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259AC88E265094E300CA9C85 /* UILable+Bond.swift */; };
+		25A444752659696A005D36DF /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A444742659696A005D36DF /* StateView.swift */; };
 		25A786B42657D8AB00F669AA /* FlightState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786B32657D8AB00F669AA /* FlightState.swift */; };
 		25A786B92657D8BF00F669AA /* FlightOriginType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786B82657D8BF00F669AA /* FlightOriginType.swift */; };
 		25A786BE2657D8CE00F669AA /* FlightType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786BD2657D8CE00F669AA /* FlightType.swift */; };
@@ -120,6 +121,7 @@
 		259AC8832650880A00CA9C85 /* Bond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bond.swift; sourceTree = "<group>"; };
 		259AC8882650890900CA9C85 /* BondBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondBox.swift; sourceTree = "<group>"; };
 		259AC88E265094E300CA9C85 /* UILable+Bond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILable+Bond.swift"; sourceTree = "<group>"; };
+		25A444742659696A005D36DF /* StateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		25A786B32657D8AB00F669AA /* FlightState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightState.swift; sourceTree = "<group>"; };
 		25A786B82657D8BF00F669AA /* FlightOriginType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOriginType.swift; sourceTree = "<group>"; };
 		25A786BD2657D8CE00F669AA /* FlightType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightType.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				25975F2E261F5FE600370915 /* ViewController.swift */,
 				25975F30261F5FE600370915 /* Main.storyboard */,
 				25975F35261F5FE700370915 /* LaunchScreen.storyboard */,
+				25A444732659694B005D36DF /* StateView */,
 				259AC87D2650836900CA9C85 /* Cells */,
 				259AC87B2650835100CA9C85 /* Utils */,
 				259AC88D265094CC00CA9C85 /* Views+Bond */,
@@ -339,6 +342,14 @@
 				259AC88E265094E300CA9C85 /* UILable+Bond.swift */,
 			);
 			path = "Views+Bond";
+			sourceTree = "<group>";
+		};
+		25A444732659694B005D36DF /* StateView */ = {
+			isa = PBXGroup;
+			children = (
+				25A444742659696A005D36DF /* StateView.swift */,
+			);
+			path = StateView;
 			sourceTree = "<group>";
 		};
 		25BD73932652007F008DA384 /* Foundation */ = {
@@ -522,6 +533,7 @@
 				255F7124263B4C6600EF8B2C /* Method.swift in Sources */,
 				2589F3842622B1A400272D38 /* FlightsService.swift in Sources */,
 				25975F2B261F5FE600370915 /* AppDelegate.swift in Sources */,
+				25A444752659696A005D36DF /* StateView.swift in Sources */,
 				25BD72D12651FD9E008DA384 /* Configuration.swift in Sources */,
 				25FE23AC26572C78007F4A3A /* SectionHeader.swift in Sources */,
 				255F7131263B4F5200EF8B2C /* ClientProtocol.swift in Sources */,
@@ -634,7 +646,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -689,7 +701,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -705,6 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QN6NJ95ZV;
 				INFOPLIST_FILE = "Airport App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -723,6 +736,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7QN6NJ95ZV;
 				INFOPLIST_FILE = "Airport App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
