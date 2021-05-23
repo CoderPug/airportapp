@@ -14,7 +14,7 @@ extension Date {
     }
     
     public func toPresentationFormat() -> String {
-        return toString(with: "dd MMM, yyyy")
+        return toString(with: "dd MMM yyyy")
     }
     
     public static func from(_ string: String) -> Date? {

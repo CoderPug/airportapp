@@ -13,7 +13,7 @@ public final class FlightsViewModel {
     private var flightsService: FlightsService
     private var flightServiceRequest: FlightsServiceRequest?
         
-    private var flights: [Flight] {
+    private var groupedFlights: [GroupedFlights] {
         didSet {
             self.reloadTableViewClosure?()
         }
@@ -26,18 +26,29 @@ public final class FlightsViewModel {
     
     public var reloadTableViewClosure: (() -> Void)?
     public var errorClosure: (() -> Void)?
-    public var numberOfItems: Int {
-        return flights.count
+    public var numberOfSections: Int {
+        return groupedFlights.count
     }
         
     init(service: FlightsService) {
-        self.flights = []
+        self.groupedFlights = []
         self.flightsService = service
     }
     
+    public func numberOfFlights(for section: Int) -> Int {
+        guard section >= 0 && section < groupedFlights.count else { return 0 }
+        return groupedFlights[section].flights.count
+    }
+    
+    public func getSectionTitle(for index: Int) -> String? {
+        guard index >= 0, index < groupedFlights.count else { return nil }
+        return groupedFlights[index].date
+    }
+    
     public func getFlight(for indexPath: IndexPath) -> FlightViewModel? {
-        guard self.flights.count > indexPath.row else { return nil }
-        let flight = flights[indexPath.row]
+        guard indexPath.section < groupedFlights.count,
+              indexPath.row < groupedFlights[indexPath.section].flights.count else { return nil }
+        let flight = groupedFlights[indexPath.section].flights[indexPath.row]
         return FlightViewModel(flight)
     }
 }
@@ -69,7 +80,7 @@ extension FlightsViewModel {
         flightsService.getFlights(body) { [weak self] result in
             switch (result) {
             case .success(let response):
-                self?.flights = response.flights
+                self?.groupedFlights = response
             case .failure(let error):
                 self?.error = error
             }

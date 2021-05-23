@@ -9,43 +9,45 @@ import Foundation
 
 private extension FlightsServiceResponse {
     
-    static func empty() -> FlightsServiceResponse {
-        return FlightsServiceResponse(flights: [])
+    static func empty() -> [GroupedFlights] {
+        return []
     }
     
-    static func singleElement() -> FlightsServiceResponse {
+    static func singleElement() -> [GroupedFlights] {
         let file: MockFile = "flightsResponseSingleElement"
         return FlightsServiceResponse.data(from: file)
     }
     
-    static func multipleElements() -> FlightsServiceResponse {
+    static func multipleElements() -> [GroupedFlights] {
         let file: MockFile = "flightsResponseMultipleElements"
         return FlightsServiceResponse.data(from: file)
     }
     
-    static func internationalArrivals() -> FlightsServiceResponse {
+    static func internationalArrivals() -> [GroupedFlights] {
         let file: MockFile = "flightsResponseInternationalArrivals"
         return FlightsServiceResponse.data(from: file)
     }
     
-    static func internationalDepartures() -> FlightsServiceResponse {
+    static func internationalDepartures() -> [GroupedFlights] {
         let file: MockFile = "flightsResponseInternationalDepartures"
         return FlightsServiceResponse.data(from: file)
     }
     
-    static func nationalArrivals() -> FlightsServiceResponse {
+    static func nationalArrivals() -> [GroupedFlights] {
         let file: MockFile = "flightsResponseNationalArrivals"
         return FlightsServiceResponse.data(from: file)
     }
     
-    static func nationalDepartures() -> FlightsServiceResponse {
+    static func nationalDepartures() -> [GroupedFlights] {
         let file: MockFile = "flightsResponseNationalDepartures"
         return FlightsServiceResponse.data(from: file)
     }
     
-    private static func data(from mockFile: MockFile) -> FlightsServiceResponse {
-        let flights: FlightsServiceResponse? = mockFile.customLoad()
-        return FlightsServiceResponse(flights: flights?.flights ?? [])
+    private static func data(from mockFile: MockFile) -> [GroupedFlights] {
+        let response: FlightsServiceResponse? = mockFile.customLoad()
+        let dictionary = Dictionary(grouping: response?.flights ?? []) { $0.scheduledDate }
+        let groupedFlights = dictionary.map{ GroupedFlights(date: $0.key, flights: $0.value) }
+        return groupedFlights
     }
     
 }
@@ -62,7 +64,7 @@ public final class MockFlightsServiceItem: FlightsService {
         case nationalArrival
         case nationalDeparture
         
-        func file() -> FlightsServiceResponse {
+        func file() -> [GroupedFlights] {
             switch self{
             case .empty:
                 return FlightsServiceResponse.empty()
@@ -89,7 +91,7 @@ public final class MockFlightsServiceItem: FlightsService {
     }
         
     func getFlights(_ request: FlightsServiceRequest,
-                    completionHandler: @escaping (Result<FlightsServiceResponse, Error>) -> Void) {
+                    completionHandler: @escaping (Result<[GroupedFlights], Error>) -> Void) {
 
         completionHandler(Result.success(type.file()))
     }

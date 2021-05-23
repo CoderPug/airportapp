@@ -54,6 +54,7 @@
 		25A786C92657FFFF00F669AA /* DecodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786C82657FFFF00F669AA /* DecodableError.swift */; };
 		25BD72D12651FD9E008DA384 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD72D02651FD9E008DA384 /* Configuration.swift */; };
 		25BD73962652009C008DA384 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD73952652009C008DA384 /* Date+Utils.swift */; };
+		25D48527265A29A700F6689B /* GroupedFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D48526265A29A700F6689B /* GroupedFlights.swift */; };
 		25D649BA265A0A4B009313B4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D649B9265A0A4B009313B4 /* HeaderView.swift */; };
 		25FE23AC26572C78007F4A3A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FE23AB26572C78007F4A3A /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
@@ -129,6 +130,7 @@
 		25A786C82657FFFF00F669AA /* DecodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableError.swift; sourceTree = "<group>"; };
 		25BD72D02651FD9E008DA384 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		25BD73952652009C008DA384 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		25D48526265A29A700F6689B /* GroupedFlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedFlights.swift; sourceTree = "<group>"; };
 		25D649B9265A0A4B009313B4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		25FE23AB26572C78007F4A3A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -281,6 +283,7 @@
 				25A786B32657D8AB00F669AA /* FlightState.swift */,
 				25A786B82657D8BF00F669AA /* FlightOriginType.swift */,
 				25A786BD2657D8CE00F669AA /* FlightType.swift */,
+				25D48526265A29A700F6689B /* GroupedFlights.swift */,
 				25A786C82657FFFF00F669AA /* DecodableError.swift */,
 			);
 			path = Models;
@@ -549,6 +552,7 @@
 				25BD72D12651FD9E008DA384 /* Configuration.swift in Sources */,
 				25FE23AC26572C78007F4A3A /* SectionHeader.swift in Sources */,
 				255F7131263B4F5200EF8B2C /* ClientProtocol.swift in Sources */,
+				25D48527265A29A700F6689B /* GroupedFlights.swift in Sources */,
 				2538AD872653704900C05703 /* MockFile.swift in Sources */,
 				25975F2D261F5FE600370915 /* SceneDelegate.swift in Sources */,
 			);

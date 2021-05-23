@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct GroupedFlights {
+    
+    let date: String
+    let flights: [Flight]
+}

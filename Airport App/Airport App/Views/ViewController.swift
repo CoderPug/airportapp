@@ -31,8 +31,10 @@ class ViewController: UIViewController {
         
         let header = HeaderView(frame: CGRect(x: 0, y: 70, width: tableView.bounds.width, height: 40))
         header.backgroundColor = UIColor(red: 37.0/255.0, green: 36.0/255.0, blue: 34.0/255.0, alpha: 1.0)
-        topView.backgroundColor = UIColor(red: 37.0/255.0, green: 36.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        header.delegate = self
         self.topView.addSubview(header)
+        
+        topView.backgroundColor = UIColor(red: 37.0/255.0, green: 36.0/255.0, blue: 34.0/255.0, alpha: 1.0)
         
         flightsViewModel.loadInternationalDeparture()
     }
@@ -56,12 +58,18 @@ extension ViewController: UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = SectionHeader(width: tableView.bounds.width)
-        headerView.title.text = "19 Mayo 2021"
+        guard let dateText = flightsViewModel.getSectionTitle(for: section),
+              let date = Date.from(dateText) else { return nil }
+        headerView.title.text = date.toPresentationFormat()
         return headerView
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return flightsViewModel.numberOfSections
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return flightsViewModel.numberOfItems
+        return flightsViewModel.numberOfFlights(for: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -96,5 +104,34 @@ extension ViewController: UITableViewDataSource {
         flightViewModel.state.value = flightViewModel.state.value
         
         return cell
+    }
+}
+
+extension ViewController: HeaderViewDelegate {
+    
+    func headerViewOnTap(_ headerView: HeaderView) {
+        let ac = UIAlertController(title: "Información de vuelos", message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Llegadas internacionles", style: .default, handler: refresh))
+        ac.addAction(UIAlertAction(title: "Llegadas nacionales", style: .default, handler: refresh))
+        ac.addAction(UIAlertAction(title: "Salidas internacionles", style: .default, handler: refresh))
+        ac.addAction(UIAlertAction(title: "Salidas nacionales", style: .default, handler: refresh))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        ac.popoverPresentationController?.barButtonItem = self.navigationItem.rightBarButtonItem
+        present(ac, animated: true)
+    }
+    
+    private func refresh(action: UIAlertAction) {
+        switch action.title {
+        case "Llegadas internacionles":
+            flightsViewModel.loadInternationalArrival()
+        case "Llegadas nacionales":
+            flightsViewModel.loadNationalArrival()
+        case "Salidas internacionles":
+            flightsViewModel.loadInternationalDeparture()
+        case "Salidas nacionales":
+            flightsViewModel.loadNationalDeparture()
+        default:
+            break
+        }
     }
 }

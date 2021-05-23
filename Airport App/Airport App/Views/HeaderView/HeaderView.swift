@@ -7,10 +7,16 @@
 
 import UIKit
 
+@objc protocol HeaderViewDelegate {
+    func headerViewOnTap(_ headerView: HeaderView)
+}
+
 final class HeaderView: UIView {
     
     private var title: UILabel
     private var image: UIImageView
+    
+    public weak var delegate: HeaderViewDelegate?
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -39,5 +45,12 @@ final class HeaderView: UIView {
             title.centerYAnchor.constraint(equalToSystemSpacingBelow: image.layoutMarginsGuide.centerYAnchor, multiplier: 1),
             title.centerXAnchor.constraint(equalTo: self.layoutMarginsGuide.centerXAnchor, constant: 15)
         ])
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(touchHappen))
+        addGestureRecognizer(tap)
+    }
+    
+    @objc private func touchHappen() {
+        delegate?.headerViewOnTap(self)
     }
 }

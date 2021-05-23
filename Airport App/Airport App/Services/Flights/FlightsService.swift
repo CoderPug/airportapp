@@ -10,5 +10,5 @@ import Foundation
 protocol FlightsService {
     
     func getFlights(_ request: FlightsServiceRequest,
-                    completionHandler: @escaping (Result<FlightsServiceResponse, Error>) -> Void)
+                    completionHandler: @escaping (Result<[GroupedFlights], Error>) -> Void)
 }
