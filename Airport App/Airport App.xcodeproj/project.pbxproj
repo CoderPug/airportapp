@@ -54,6 +54,7 @@
 		25A786C92657FFFF00F669AA /* DecodableError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A786C82657FFFF00F669AA /* DecodableError.swift */; };
 		25BD72D12651FD9E008DA384 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD72D02651FD9E008DA384 /* Configuration.swift */; };
 		25BD73962652009C008DA384 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25BD73952652009C008DA384 /* Date+Utils.swift */; };
+		25D649BA265A0A4B009313B4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D649B9265A0A4B009313B4 /* HeaderView.swift */; };
 		25FE23AC26572C78007F4A3A /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FE23AB26572C78007F4A3A /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,7 @@
 		25A786C82657FFFF00F669AA /* DecodableError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableError.swift; sourceTree = "<group>"; };
 		25BD72D02651FD9E008DA384 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		25BD73952652009C008DA384 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		25D649B9265A0A4B009313B4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		25FE23AB26572C78007F4A3A /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,6 +304,7 @@
 				25975F2E261F5FE600370915 /* ViewController.swift */,
 				25975F30261F5FE600370915 /* Main.storyboard */,
 				25975F35261F5FE700370915 /* LaunchScreen.storyboard */,
+				25D649B8265A0A24009313B4 /* HeaderView */,
 				25A444732659694B005D36DF /* StateView */,
 				259AC87D2650836900CA9C85 /* Cells */,
 				259AC87B2650835100CA9C85 /* Utils */,
@@ -358,6 +361,14 @@
 				25BD73952652009C008DA384 /* Date+Utils.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		25D649B8265A0A24009313B4 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				25D649B9265A0A4B009313B4 /* HeaderView.swift */,
+			);
+			path = HeaderView;
 			sourceTree = "<group>";
 		};
 		25FE23A726572C30007F4A3A /* SectionHeader */ = {
@@ -529,6 +540,7 @@
 				2538AD6B2653500900C05703 /* NetworkError.swift in Sources */,
 				259AC87F2650871A00CA9C85 /* Dynamic.swift in Sources */,
 				2572149A264665500000BE1C /* FlightServiceResponse.swift in Sources */,
+				25D649BA265A0A4B009313B4 /* HeaderView.swift in Sources */,
 				259AC85F26506F9500CA9C85 /* FlightViewModel.swift in Sources */,
 				255F7124263B4C6600EF8B2C /* Method.swift in Sources */,
 				2589F3842622B1A400272D38 /* FlightsService.swift in Sources */,

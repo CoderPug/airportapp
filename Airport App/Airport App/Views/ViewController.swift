@@ -10,11 +10,16 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var topView: UIView!
     
 //        return FlightsViewModel(service: MockFlightsServiceItem(type: .multiple))
     private lazy var flightsViewModel: FlightsViewModel = {
         return FlightsViewModel(service: FlightsServiceItem())
     }()
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +28,11 @@ class ViewController: UIViewController {
         tableView.sectionHeaderHeight = UITableView.automaticDimension
         tableView.estimatedSectionHeaderHeight = 20.0
         setupViewModelClosures()
+        
+        let header = HeaderView(frame: CGRect(x: 0, y: 70, width: tableView.bounds.width, height: 40))
+        header.backgroundColor = UIColor(red: 37.0/255.0, green: 36.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        topView.backgroundColor = UIColor(red: 37.0/255.0, green: 36.0/255.0, blue: 34.0/255.0, alpha: 1.0)
+        self.topView.addSubview(header)
         
         flightsViewModel.loadInternationalDeparture()
     }

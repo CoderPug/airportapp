@@ -49,5 +49,4 @@ final class StateView: UIView {
             title.trailingAnchor.constraint(equalTo: self.layoutMarginsGuide.trailingAnchor),
         ])
     }
-    
 }

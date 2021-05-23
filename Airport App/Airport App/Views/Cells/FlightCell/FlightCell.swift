@@ -17,6 +17,8 @@ final class FlightCell: UITableViewCell {
     @IBOutlet weak var counter: UILabel!
     @IBOutlet weak var gate: UILabel!
     @IBOutlet weak var remarks: UILabel!
+    @IBOutlet weak var separatorLine1: UIView!
+    @IBOutlet weak var separatorLine2: UIView!
     
     private var stateView: StateView?
 
@@ -26,6 +28,10 @@ final class FlightCell: UITableViewCell {
     }
     
     public func setup(with state: String, color: UIColor) {
+        
+        separatorLine1.backgroundColor = color
+        separatorLine2.backgroundColor = .systemGray4
+        
         stateView = StateView(text: state, color: color)
         guard let stateView = stateView else { return }
         addSubview(stateView)
