@@ -9,13 +9,13 @@ import Foundation
 
 public struct FlightsServiceRequest {
     
-    let date: String
+    let date: String?
     let operation: String?
     let destination: String?
     let origin: String?
     let flight: String?
     
-    init(date: String,
+    init(date: String? = nil,
          operation: String? = nil,
          origin: String? = nil,
          destination: String? = nil,

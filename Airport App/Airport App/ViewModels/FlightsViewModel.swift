@@ -40,7 +40,7 @@ public final class FlightsViewModel {
     
     public func getSectionTitle(for index: Int) -> String? {
         guard index >= 0, index < groupedFlights.count else { return nil }
-        return groupedFlights[index].date
+        return groupedFlights[index].date.toPresentationFormat()
     }
     
     public func getFlight(for indexPath: IndexPath) -> FlightViewModel? {
@@ -91,7 +91,8 @@ extension FlightsViewModel {
     }
     
     private func load(for date: Date, type: FlightType, origin: FlightOriginType? = nil) {
-        let body = FlightsServiceRequest(date: date.toRequestFormat(),
+//        date.toRequestFormat()
+        let body = FlightsServiceRequest(date: nil,
                                          operation: type.rawValue,
                                          origin: origin?.rawValue)
         flightsService.getFlights(body) { [weak self] result in

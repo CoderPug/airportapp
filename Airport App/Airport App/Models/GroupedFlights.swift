@@ -9,6 +9,13 @@ import Foundation
 
 struct GroupedFlights {
     
-    let date: String
+    let date: Date
     let flights: [Flight]
+    
+    init?(date: String, flights: [Flight]) {
+        guard let date = Date.from(date) else { return nil }
+        self.date = date
+        self.flights = flights
+    }
+    
 }

@@ -18,7 +18,8 @@ public final class FlightsServiceItem: FlightsService {
             case .success(let response):
                 let flights = response.flights
                 let dictionary = Dictionary(grouping: flights) { $0.scheduledDate }
-                let groupedFlights = dictionary.map{ GroupedFlights(date: $0.key, flights: $0.value) }
+                var groupedFlights = dictionary.compactMap{ GroupedFlights(date: $0.key, flights: $0.value) }
+                groupedFlights.sort(by: { $0.date < $1.date })
                 completionHandler(.success(groupedFlights))
             case .failure(let error):
                 completionHandler(.failure(error))

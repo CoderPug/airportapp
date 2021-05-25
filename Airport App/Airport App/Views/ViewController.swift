@@ -63,9 +63,8 @@ extension ViewController: UITableViewDataSource {
         
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = SectionHeader(width: tableView.bounds.width)
-        guard let dateText = flightsViewModel.getSectionTitle(for: section),
-              let date = Date.from(dateText) else { return nil }
-        headerView.title.text = date.toPresentationFormat()
+        guard let dateText = flightsViewModel.getSectionTitle(for: section) else { return nil }
+        headerView.title.text = dateText
         return headerView
     }
     

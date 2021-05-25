@@ -46,7 +46,7 @@ private extension FlightsServiceResponse {
     private static func data(from mockFile: MockFile) -> [GroupedFlights] {
         let response: FlightsServiceResponse? = mockFile.customLoad()
         let dictionary = Dictionary(grouping: response?.flights ?? []) { $0.scheduledDate }
-        let groupedFlights = dictionary.map{ GroupedFlights(date: $0.key, flights: $0.value) }
+        let groupedFlights = dictionary.compactMap{ GroupedFlights(date: $0.key, flights: $0.value) }
         return groupedFlights
     }
     
