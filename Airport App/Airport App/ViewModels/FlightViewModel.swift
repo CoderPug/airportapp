@@ -31,12 +31,16 @@ public final class FlightViewModel {
         self.state = Dynamic(flight.state.value())
         let date = Date.from(flight.scheduledDate)
         self.date = Dynamic(date?.toPresentationFormat() ?? "")
-        self.hour = Dynamic(flight.scheduledHour)
         self.gate = Dynamic(flight.boardingGate ?? "-")
         self.carousel = Dynamic(flight.baggageCarousel)
         self.type = flight.flightType
         self.originType = flight.flightOriginType
         let color = flight.state.color()
+        if !flight.estimatedHour.isEmpty {
+            self.hour = Dynamic(flight.estimatedHour)
+        } else {
+            self.hour = Dynamic(flight.scheduledHour)
+        }        
         self.stateColor = UIColor(red: CGFloat(color.0),
                                   green: CGFloat(color.1),
                                   blue: CGFloat(color.2),

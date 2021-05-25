@@ -56,8 +56,10 @@ class FlightsViewModelTests: XCTestCase {
         flightsViewModel = FlightsViewModel(service: mockFlightsServiceItem)
         
         flightsViewModel.loadInternationalArrival()
-        let count = flightsViewModel.numberOfItems
-        XCTAssert(count == 0, "Unexpected amount of items")
+        let countSections = flightsViewModel.numberOfSections
+        let countFlights = flightsViewModel.numberOfFlights(for: 0)
+        XCTAssert(countSections == 0, "Unexpected amount of sections")
+        XCTAssert(countFlights == 0, "Unexpected amount of flights")
     }
     
     func testCorrectNumberOfItemsInNonEmptyList() {
@@ -66,8 +68,10 @@ class FlightsViewModelTests: XCTestCase {
         flightsViewModel = FlightsViewModel(service: mockFlightsServiceItem)
         
         flightsViewModel.loadInternationalArrival()
-        let count = flightsViewModel.numberOfItems
-        XCTAssert(count == 37, "Unexpected amount of items")
+        let countSections = flightsViewModel.numberOfSections
+        let countFlights = flightsViewModel.numberOfFlights(for: 0)
+        XCTAssert(countSections == 1, "Unexpected amount of sections")
+        XCTAssert(countFlights == 37, "Unexpected amount of flights")
     }
     
     func testCorrectTypeFlightAfterRequestingInternationalArrivals() {

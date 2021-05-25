@@ -6,13 +6,11 @@
 //
 
 import Foundation
-import UIKit
 
 public final class FlightsViewModel {
     
     private var flightsService: FlightsService
-    private var flightServiceRequest: FlightsServiceRequest?
-        
+            
     private var groupedFlights: [GroupedFlights] {
         didSet {
             self.reloadTableViewClosure?()
@@ -56,6 +54,25 @@ public final class FlightsViewModel {
 // MARK: Intents
 
 extension FlightsViewModel {
+    
+    public func getFlightsPresentationTypes() -> [String] {
+        return FlightPresentationType.allCases.map { $0.value() }
+    }
+    
+    public func presentationTypeSelected(_ index: Int) {
+        guard index >= 0, index < FlightPresentationType.allCases.count else { return }
+        let type = FlightPresentationType.allCases[index]
+        switch type {
+        case .internationalArrival:
+            loadInternationalArrival()
+        case .internationalDeparture:
+            loadInternationalDeparture()
+        case .nationalArrival:
+            loadNationalArrival()
+        case .nationalDeparture:
+            loadNationalDeparture()
+        }
+    }
     
     public func loadInternationalArrival(for date: Date = Date()) {
         load(for: date, type: .arrival, origin: .international)

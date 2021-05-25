@@ -34,7 +34,6 @@ final class HeaderView: UIView {
         title.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "arrival-icon")
         title.font = UIFont(name: "HelveticaNeue-Bold", size: 15.0)
-        title.text = "LLEGADAS INTERNACIONALES \u{25BC}"
         title.textColor = UIColor(red: 255.0/255.0, green: 214.0/255.0, blue: 10.0/255.0, alpha: 1.0)
         addSubview(image)
         addSubview(title)
@@ -52,5 +51,10 @@ final class HeaderView: UIView {
     
     @objc private func touchHappen() {
         delegate?.headerViewOnTap(self)
+    }
+    
+    public func setTitle(text: String) {
+        title.text = "\(text.uppercased()) \u{25BC}"
+        setNeedsLayout()
     }
 }
