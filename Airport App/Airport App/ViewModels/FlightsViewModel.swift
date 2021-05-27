@@ -74,6 +74,17 @@ extension FlightsViewModel {
         }
     }
     
+    public func getTopHeaderImageName(_ index: Int) -> String? {
+        guard index >= 0, index < FlightPresentationType.allCases.count else { return nil }
+        let type = FlightPresentationType.allCases[index]
+        switch type {
+        case .internationalArrival, .nationalArrival:
+            return "arrival-icon"
+        case .internationalDeparture, .nationalDeparture:
+            return "departure-icon"
+        }
+    }
+    
     public func loadInternationalArrival(for date: Date = Date()) {
         load(for: date, type: .arrival, origin: .international)
     }

@@ -26,6 +26,8 @@
 		255F7131263B4F5200EF8B2C /* ClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255F7130263B4F5200EF8B2C /* ClientProtocol.swift */; };
 		2572149A264665500000BE1C /* FlightServiceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25721499264665500000BE1C /* FlightServiceResponse.swift */; };
 		257214A62646687D0000BE1C /* API+Flights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257214A52646687D0000BE1C /* API+Flights.swift */; };
+		257DA433265EAE100028076C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 257DA435265EAE100028076C /* Localizable.strings */; };
+		257DA43E265EB51A0028076C /* FlightCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DA43D265EB51A0028076C /* FlightCellType.swift */; };
 		2589F3842622B1A400272D38 /* FlightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2589F3832622B1A400272D38 /* FlightsService.swift */; };
 		2589F38F2622B24700272D38 /* FlightsServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2589F38E2622B24700272D38 /* FlightsServiceRequest.swift */; };
 		2589F3972622B3B600272D38 /* FlightsServiceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2589F3962622B3B600272D38 /* FlightsServiceItem.swift */; };
@@ -97,6 +99,12 @@
 		255F7130263B4F5200EF8B2C /* ClientProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientProtocol.swift; sourceTree = "<group>"; };
 		25721499264665500000BE1C /* FlightServiceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightServiceResponse.swift; sourceTree = "<group>"; };
 		257214A52646687D0000BE1C /* API+Flights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API+Flights.swift"; sourceTree = "<group>"; };
+		257DA434265EAE100028076C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		257DA439265EAF640028076C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		257DA43D265EB51A0028076C /* FlightCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightCellType.swift; sourceTree = "<group>"; };
+		257DA442265ED5CF0028076C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		257DA443265ED5E20028076C /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		257DA444265ED6450028076C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2589F3832622B1A400272D38 /* FlightsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsService.swift; sourceTree = "<group>"; };
 		2589F38E2622B24700272D38 /* FlightsServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsServiceRequest.swift; sourceTree = "<group>"; };
 		2589F3962622B3B600272D38 /* FlightsServiceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsServiceItem.swift; sourceTree = "<group>"; };
@@ -253,6 +261,7 @@
 				25BD73932652007F008DA384 /* Foundation */,
 				2538AD8526536FD400C05703 /* Mocks */,
 				25975F33261F5FE700370915 /* Assets.xcassets */,
+				257DA435265EAE100028076C /* Localizable.strings */,
 				25975F38261F5FE700370915 /* Info.plist */,
 			);
 			path = "Airport App";
@@ -332,6 +341,7 @@
 			children = (
 				259AC868265073AD00CA9C85 /* FlightCell.xib */,
 				259AC8632650717600CA9C85 /* FlightCell.swift */,
+				257DA43D265EB51A0028076C /* FlightCellType.swift */,
 			);
 			path = FlightCell;
 			sourceTree = "<group>";
@@ -470,6 +480,10 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
+				fr,
+				de,
+				"pt-BR",
 			);
 			mainGroup = 25975F1E261F5FE600370915;
 			productRefGroup = 25975F28261F5FE600370915 /* Products */;
@@ -489,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2538AD96265373B200C05703 /* flightsResponseSingleElement.json in Resources */,
+				257DA433265EAE100028076C /* Localizable.strings in Resources */,
 				2538ADAB26537B7A00C05703 /* flightsResponseNationalDepartures.json in Resources */,
 				2538AD97265373B200C05703 /* flightsResponseEmpty.json in Resources */,
 				2538ADA926537B7A00C05703 /* flightsResponseNationalArrivals.json in Resources */,
@@ -538,6 +553,7 @@
 				259AC8842650880A00CA9C85 /* Bond.swift in Sources */,
 				255F7117263B4ABB00EF8B2C /* API.swift in Sources */,
 				255F712C263B4F3500EF8B2C /* Client.swift in Sources */,
+				257DA43E265EB51A0028076C /* FlightCellType.swift in Sources */,
 				25D7B588265B416D0079F686 /* FlightPresentationType.swift in Sources */,
 				25BD73962652009C008DA384 /* Date+Utils.swift in Sources */,
 				25A786BE2657D8CE00F669AA /* FlightType.swift in Sources */,
@@ -596,6 +612,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		257DA435265EAE100028076C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				257DA434265EAE100028076C /* en */,
+				257DA439265EAF640028076C /* es */,
+				257DA442265ED5CF0028076C /* fr */,
+				257DA443265ED5E20028076C /* de */,
+				257DA444265ED6450028076C /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		25975F30261F5FE600370915 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -619,6 +647,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -680,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

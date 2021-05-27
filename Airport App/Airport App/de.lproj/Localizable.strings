@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  Airport App
+
+  Created by Jose Torres on 5/26/21.
+  
+*/
+
+"Flight Types Information" = "Informationen zu Flugtypen";
+"International Arrivals" = "Internationale Ankünfte";
+"International Departures" = "Internationale Abflüge";
+"National Arrivals" = "Nationale Ankünfte";
+"National Departures" = "Nationale Abflüge";
+"Cancel" = "Stornieren";
+"Flight" = "Flug";
+"Hour" = "Stunde";
+"From" = "Von";
+"Belt" = "Gürtel";
+"To" = "Zu";
+"Counter" = "Zähler";
+"Gate" = "Tor";
+"Scheduled" = "Geplant";
+"Confirmed" = "Bestätigt";
+"Delayed" = "Verspätet";
+"Canceled" = "Abgesagt";
+"Landed" = "Gelandet";
+"Boarding" = "Einsteigen";
+"Last Call" = "Letzter Aufruf";
+"Boarded" = "An Bord";

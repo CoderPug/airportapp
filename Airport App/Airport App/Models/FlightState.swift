@@ -60,15 +60,15 @@ extension ArrivalState {
     public func value() -> String {
         switch self {
         case .scheduled:
-            return "Programado".uppercased()
+            return NSLocalizedString("Scheduled", comment: "Scheduled Arrival State title")
         case .confirmed:
-            return "Confirmado".uppercased()
+            return NSLocalizedString("Confirmed", comment: "Confirmed Arrival State title")
         case .delayed:
-            return "Demorado".uppercased()
+            return NSLocalizedString("Delayed", comment: "Delayed Arrival State title")
         case .canceled:
-            return "Cancelado".uppercased()
+            return NSLocalizedString("Canceled", comment: "Canceled Arrival State title")
         case .landed:
-            return "Aterrizo".uppercased()
+            return NSLocalizedString("Landed", comment: "Landed Arrival State title")
         case .unknown:
             return "-"
         }
@@ -97,19 +97,19 @@ extension DepartureState {
     public func value() -> String {
         switch self {
         case .scheduled:
-            return "Programado".uppercased()
+            return NSLocalizedString("Scheduled", comment: "Scheduled Arrival State title")
         case .confirmed:
-            return "Confirmado".uppercased()
+            return NSLocalizedString("Confirmed", comment: "Confirmed Arrival State title")
         case .delayed:
-            return "Demorado".uppercased()
+            return NSLocalizedString("Delayed", comment: "Delayed Arrival State title")
         case .boarding:
-            return "Embarcando".uppercased()
+            return NSLocalizedString("Boarding", comment: "Canceled Arrival State title")
         case .lastCall:
-            return "Ultima Llamada".uppercased()
+            return NSLocalizedString("Last Call", comment: "Canceled Arrival State title")
         case .boarded:
-            return "Embarcado".uppercased()
+            return NSLocalizedString("Boarded", comment: "Canceled Arrival State title")
         case .canceled:
-            return "Cancelado".uppercased()
+            return NSLocalizedString("Canceled", comment: "Canceled Arrival State title")
         case .unknown:
             return "-"
         }

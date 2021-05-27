@@ -21,13 +21,13 @@ extension FlightPresentationType {
     public func value() -> String {
         switch self {
         case .internationalArrival:
-            return "International Arrivals"
+            return NSLocalizedString("International Arrivals", comment: "International Arrivals title")
         case .internationalDeparture:
-            return "International Departures"
+            return NSLocalizedString("International Departures", comment: "International Departures title")
         case .nationalArrival:
-            return "National Arrivals"
+            return NSLocalizedString("National Arrivals", comment: "National Arrivals title")
         case .nationalDeparture:
-            return "National Departures"
+            return NSLocalizedString("National Departures", comment: "National Departures title")
         }
     }
 }

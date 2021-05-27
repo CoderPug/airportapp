@@ -180,11 +180,16 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="airline" destination="Ch7-Cu-br5" id="tkx-6t-PLd"/>
+                <outlet property="airlineTitle" destination="Rp3-Or-iNA" id="mEL-nB-Eco"/>
+                <outlet property="city" destination="KLR-hU-ejc" id="6H4-Xd-kKM"/>
+                <outlet property="cityTitle" destination="9QF-lN-Yhb" id="V6y-us-lVE"/>
                 <outlet property="code" destination="MiX-FS-s0g" id="dUX-7Z-64q"/>
                 <outlet property="counter" destination="YdB-e9-Kel" id="UTE-OB-7My"/>
-                <outlet property="destination" destination="KLR-hU-ejc" id="7Vu-EM-4WM"/>
+                <outlet property="counterTitle" destination="PSf-5W-tdX" id="qUH-Vp-Q9z"/>
                 <outlet property="gate" destination="nHe-dF-MDG" id="I7p-9c-MS1"/>
+                <outlet property="gateTitle" destination="RAb-SW-dYh" id="jjl-8z-KUf"/>
                 <outlet property="hour" destination="CHU-Jv-s7L" id="jj6-sB-DYR"/>
+                <outlet property="hourTitle" destination="UVq-7R-Yyx" id="Udm-oX-Qg2"/>
                 <outlet property="remarks" destination="ZZq-so-l0L" id="yLy-bR-7wa"/>
                 <outlet property="separatorLine1" destination="okK-Ek-tWb" id="69e-om-wv5"/>
                 <outlet property="separatorLine2" destination="dFw-Ec-bI3" id="w4n-4q-SQO"/>

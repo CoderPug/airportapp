@@ -16,6 +16,5 @@ struct GroupedFlights {
         guard let date = Date.from(date) else { return nil }
         self.date = date
         self.flights = flights
-    }
-    
+    }    
 }
