@@ -104,6 +104,7 @@ extension ViewController: UITableViewDataSource {
         flightViewModel.hour.value = flightViewModel.hour.value
         flightViewModel.carousel.value = flightViewModel.carousel.value
         flightViewModel.date.value = flightViewModel.date.value
+        flightViewModel.gate.value = flightViewModel.gate.value
         flightViewModel.state.value = flightViewModel.state.value
         
         return cell
