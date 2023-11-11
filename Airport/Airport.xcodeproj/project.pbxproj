@@ -95,6 +95,10 @@
 		257DA9F82B002522003B0AFA /* Airport */ = {
 			isa = PBXGroup;
 			children = (
+				257DAA282B002602003B0AFA /* Model */,
+				257DAA262B0025F1003B0AFA /* Network */,
+				257DAA272B0025FD003B0AFA /* Service */,
+				257DAA292B002607003B0AFA /* View */,
 				257DA9F92B002522003B0AFA /* AirportApp.swift */,
 				257DA9FB2B002522003B0AFA /* ContentView.swift */,
 				257DA9FD2B002523003B0AFA /* Assets.xcassets */,
@@ -127,6 +131,34 @@
 				257DAA172B002524003B0AFA /* AirportUITestsLaunchTests.swift */,
 			);
 			path = AirportUITests;
+			sourceTree = "<group>";
+		};
+		257DAA262B0025F1003B0AFA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		257DAA272B0025FD003B0AFA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		257DAA282B002602003B0AFA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		257DAA292B002607003B0AFA /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
