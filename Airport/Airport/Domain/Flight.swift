@@ -18,15 +18,15 @@ struct Flight {
   }
 
   struct DateTime {
-    let scheduled: Date
-    let estimated: Date
-    let real: Date
+    let scheduled: Date?
+    let estimated: Date?
+    let real: Date?
   }
 
   let code: String
   let number: String
   let airline: Flight.Airline
-  let type: Operation
+  let operation: Operation
   let traffic: Flight.Traffic
   let state: String
   let dateTime: DateTime
