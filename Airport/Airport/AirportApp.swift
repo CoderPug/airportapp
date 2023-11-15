@@ -4,12 +4,11 @@ import SwiftUI
 struct AirportApp: App {
 
   init() {
-    FlightsService().get()
   }
 
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      FlightsListView()
     }
   }
 

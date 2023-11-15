@@ -7,12 +7,12 @@ struct Flight {
     let name: String
   }
 
-  enum Operation {
+  enum Operation: String {
     case arrival
     case departure
   }
 
-  enum Traffic {
+  enum Traffic: String {
     case national
     case international
   }

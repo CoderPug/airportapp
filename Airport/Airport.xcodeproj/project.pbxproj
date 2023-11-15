@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		257DA9FA2B002522003B0AFA /* AirportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DA9F92B002522003B0AFA /* AirportApp.swift */; };
-		257DA9FC2B002522003B0AFA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DA9FB2B002522003B0AFA /* ContentView.swift */; };
+		257DA9FC2B002522003B0AFA /* FlightsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DA9FB2B002522003B0AFA /* FlightsListView.swift */; };
 		257DA9FE2B002523003B0AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257DA9FD2B002523003B0AFA /* Assets.xcassets */; };
 		257DAA022B002523003B0AFA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257DAA012B002523003B0AFA /* Preview Assets.xcassets */; };
 		257DAA0C2B002524003B0AFA /* AirportTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA0B2B002524003B0AFA /* AirportTests.swift */; };
@@ -31,6 +31,8 @@
 		257DAA482B015EAF003B0AFA /* FlightContent+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA472B015EAF003B0AFA /* FlightContent+Parsing.swift */; };
 		257DAA4B2B017B9C003B0AFA /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA4A2B017B9C003B0AFA /* DateFormatter+Custom.swift */; };
 		257DAA4D2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA4C2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift */; };
+		25A789F42B0575FD0051C362 /* FlightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A789F32B0575FD0051C362 /* FlightsViewModel.swift */; };
+		25A789F62B0576620051C362 /* FlightsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A789F52B0576620051C362 /* FlightsServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,7 @@
 /* Begin PBXFileReference section */
 		257DA9F62B002522003B0AFA /* Airport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257DA9F92B002522003B0AFA /* AirportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportApp.swift; sourceTree = "<group>"; };
-		257DA9FB2B002522003B0AFA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		257DA9FB2B002522003B0AFA /* FlightsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsListView.swift; sourceTree = "<group>"; };
 		257DA9FD2B002523003B0AFA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		257DA9FF2B002523003B0AFA /* Airport.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Airport.entitlements; sourceTree = "<group>"; };
 		257DAA012B002523003B0AFA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 		257DAA472B015EAF003B0AFA /* FlightContent+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightContent+Parsing.swift"; sourceTree = "<group>"; };
 		257DAA4A2B017B9C003B0AFA /* DateFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Custom.swift"; sourceTree = "<group>"; };
 		257DAA4C2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Utils.swift"; sourceTree = "<group>"; };
+		25A789F32B0575FD0051C362 /* FlightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewModel.swift; sourceTree = "<group>"; };
+		25A789F52B0576620051C362 /* FlightsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,9 +138,9 @@
 				257DAA282B002602003B0AFA /* Model */,
 				257DAA272B0025FD003B0AFA /* Service */,
 				257DAA422B015054003B0AFA /* Domain */,
+				25A789F22B0575EC0051C362 /* ViewModel */,
 				257DAA292B002607003B0AFA /* View */,
 				257DA9F92B002522003B0AFA /* AirportApp.swift */,
-				257DA9FB2B002522003B0AFA /* ContentView.swift */,
 				257DA9FD2B002523003B0AFA /* Assets.xcassets */,
 				257DA9FF2B002523003B0AFA /* Airport.entitlements */,
 				257DAA002B002523003B0AFA /* Preview Content */,
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				257DAA382B0030C1003B0AFA /* FlightsAPI.swift */,
+				25A789F52B0576620051C362 /* FlightsServiceProtocol.swift */,
 				257DAA342B002A01003B0AFA /* FlightsService.swift */,
 				257DAA472B015EAF003B0AFA /* FlightContent+Parsing.swift */,
 			);
@@ -206,6 +211,7 @@
 		257DAA292B002607003B0AFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				257DA9FB2B002522003B0AFA /* FlightsListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +232,14 @@
 				257DAA4C2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		25A789F22B0575EC0051C362 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				25A789F32B0575FD0051C362 /* FlightsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,9 +380,10 @@
 				257DAA2B2B00277E003B0AFA /* ClientProtocol.swift in Sources */,
 				257DAA3F2B003130003B0AFA /* FlightDTO.swift in Sources */,
 				257DAA352B002A01003B0AFA /* FlightsService.swift in Sources */,
-				257DA9FC2B002522003B0AFA /* ContentView.swift in Sources */,
+				257DA9FC2B002522003B0AFA /* FlightsListView.swift in Sources */,
 				257DAA4B2B017B9C003B0AFA /* DateFormatter+Custom.swift in Sources */,
 				257DAA4D2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift in Sources */,
+				25A789F62B0576620051C362 /* FlightsServiceProtocol.swift in Sources */,
 				257DAA372B002D3E003B0AFA /* GetFlightsDTO.swift in Sources */,
 				257DAA2D2B0027AF003B0AFA /* Endpoint.swift in Sources */,
 				257DAA2F2B002834003B0AFA /* Client.swift in Sources */,
@@ -376,6 +391,7 @@
 				257DAA312B0028C4003B0AFA /* Server.swift in Sources */,
 				257DAA392B0030C2003B0AFA /* FlightsAPI.swift in Sources */,
 				257DA9FA2B002522003B0AFA /* AirportApp.swift in Sources */,
+				25A789F42B0575FD0051C362 /* FlightsViewModel.swift in Sources */,
 				257DAA332B00296D003B0AFA /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

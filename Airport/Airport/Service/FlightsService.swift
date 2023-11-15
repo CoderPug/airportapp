@@ -1,15 +1,20 @@
+final class FlightsService: FlightsServiceProtocol {
 
-public final class FlightsService {
+  private let client: ClientProtocol
 
-  func get() {
+  init(client: ClientProtocol = Client()) {
+    self.client = client
+  }
 
-    Client().request(API.Flights.get()) { result in
+  func get(completion: @escaping (Result<FlightsContent, Error>) -> Void) {
+
+    let endpoint = API.Flights.get()
+    self.client.request(endpoint) { result in
       switch result {
       case let .success(getFlightsDTO):
-        let resultFlights = FlightsContent.init(with: getFlightsDTO)
-        print("Success: \(resultFlights.flights.count)")
+        completion(.success(.init(with: getFlightsDTO)))
       case let .failure(error):
-        print("Error: \(error)")
+        completion(.failure(error))
       }
     }
 
