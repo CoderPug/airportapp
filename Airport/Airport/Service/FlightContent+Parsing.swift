@@ -22,7 +22,8 @@ extension FlightsContent {
           scheduled: data.dateTimeScheduled,
           estimated: data.dateTimeEstimated,
           real: data.dateTimeReal
-        )
+        ),
+        destination: data.destination
       )
     }
   }

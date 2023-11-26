@@ -30,4 +30,5 @@ struct Flight {
   let traffic: Flight.Traffic
   let state: String
   let dateTime: DateTime
+  let destination: String
 }
