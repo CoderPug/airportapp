@@ -35,46 +35,55 @@ struct FlightsListView: View {
 
   var body: some View {
     NavigationView {
-      List {
-        ForEach(self.$viewModel.flights) { $flight in
-          VStack(alignment: .leading) {
-            HStack {
-              Spacer()
-              ZStack(alignment: .top) {
-                UnevenRoundedRectangle(
-                  cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
-                )
-                .fill(getStateColor(state: flight.state))
-                .frame(width: 140, height: 30)
-                Text(flight.state)
-                  .font(.headline)
-                  .colorInvert()
-                  .padding(.top, 5)
+      VStack {
+        Picker("Day Picker", selection: $viewModel.selectedDay) {
+          ForEach($viewModel.availableDays, id: \.self) { $day in
+            Text(day.displayText)
+          }
+        }
+        .padding(.all)
+        .pickerStyle(.segmented)
+        List {
+          ForEach($viewModel.flights) { $flight in
+            VStack(alignment: .leading) {
+              HStack {
+                Spacer()
+                ZStack(alignment: .top) {
+                  UnevenRoundedRectangle(
+                    cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
+                  )
+                  .fill(getStateColor(state: flight.state))
+                  .frame(width: 140, height: 30)
+                  Text(flight.state)
+                    .font(.headline)
+                    .colorInvert()
+                    .padding(.top, 5)
+                }
+                .padding(.top, -10)
               }
-              .padding(.top, -10)
-            }
-            Text("Flight:")
-              .font(.caption)
-            Text(flight.code + " - " + flight.airline.abreviature)
-              .font(.title2)
-              .bold()
-            HStack() {
-              VStack(alignment: .leading) {
-                Text("From:")
-                  .font(.caption)
-                Text(flight.destination)
-              }
-              Spacer()
-              VStack(alignment: .center) {
-                Text("Hour:")
-                  .font(.caption)
-                Text("10:00")
+              Text("Flight:")
+                .font(.caption)
+              Text(flight.code + " - " + flight.airline.abreviature)
+                .font(.title2)
+                .bold()
+              HStack() {
+                VStack(alignment: .leading) {
+                  Text("From:")
+                    .font(.caption)
+                  Text(flight.destination)
+                }
+                Spacer()
+                VStack(alignment: .center) {
+                  Text("Hour:")
+                    .font(.caption)
+                  Text(flight.dateTime.scheduled?.toText() ?? "-")
+                }
               }
             }
           }
         }
+        .navigationTitle("Vuelos")
       }
-      .navigationTitle("Vuelos")
     }
   }
 

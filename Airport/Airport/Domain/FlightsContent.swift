@@ -1,5 +1,5 @@
 struct FlightsContent {
 
-  let flights: [Flight]
+  let flights: [Day: [Flight]]
 
 }

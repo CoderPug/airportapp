@@ -9,4 +9,18 @@ extension DateFormatter {
     return formatter
   }()
 
+  /// Display DateFormatter for "yyyy-MM-dd HH:MM"
+  static let displayFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd HH:MM"
+    return formatter
+  }()
+
+  /// Request DateFormatter for "yyyy-MM-dd"
+  static let requestFormatter: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "yyyy-MM-dd"
+    return formatter
+  }()
+
 }

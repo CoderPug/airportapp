@@ -32,3 +32,11 @@ struct Flight {
   let dateTime: DateTime
   let destination: String
 }
+
+extension Date {
+
+  func toText() -> String {
+    DateFormatter.displayFormatter.string(from: self)
+  }
+
+}
