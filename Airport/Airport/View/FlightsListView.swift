@@ -76,7 +76,7 @@ struct FlightsListView: View {
                 VStack(alignment: .center) {
                   Text("Hour:")
                     .font(.caption)
-                  Text(flight.dateTime.scheduled?.toText() ?? "-")
+                  Text(flight.dateTime.scheduled?.displayText() ?? "-")
                 }
               }
             }

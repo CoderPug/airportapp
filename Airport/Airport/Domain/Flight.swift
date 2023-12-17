@@ -35,7 +35,7 @@ struct Flight {
 
 extension Date {
 
-  func toText() -> String {
+  func displayText() -> String {
     DateFormatter.displayFormatter.string(from: self)
   }
 

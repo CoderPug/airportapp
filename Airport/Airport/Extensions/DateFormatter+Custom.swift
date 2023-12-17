@@ -5,14 +5,14 @@ extension DateFormatter {
   /// Custom DateFormatter for "yyyy-MM-dd HH:MM:SS"
   static let custom: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:MM:SS"
+    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
     return formatter
   }()
 
   /// Display DateFormatter for "yyyy-MM-dd HH:MM"
   static let displayFormatter: DateFormatter = {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy-MM-dd HH:MM"
+    formatter.dateFormat = "yyyy-MM-dd HH:mm"
     return formatter
   }()
 

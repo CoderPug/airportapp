@@ -10,6 +10,7 @@
 		2559490D2B2EFD13007A91CF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2559490C2B2EFD13007A91CF /* Date+Extension.swift */; };
 		2559490F2B2F04A2007A91CF /* FlightDTO+Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2559490E2B2F04A2007A91CF /* FlightDTO+Flight.swift */; };
 		255949112B2F074F007A91CF /* GetFlightsDTO+FlightDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255949102B2F074F007A91CF /* GetFlightsDTO+FlightDTO.swift */; };
+		255949142B2F7EB7007A91CF /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255949132B2F7EB7007A91CF /* DateTests.swift */; };
 		257DA9FA2B002522003B0AFA /* AirportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DA9F92B002522003B0AFA /* AirportApp.swift */; };
 		257DA9FC2B002522003B0AFA /* FlightsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DA9FB2B002522003B0AFA /* FlightsListView.swift */; };
 		257DA9FE2B002523003B0AFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257DA9FD2B002523003B0AFA /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		2559490C2B2EFD13007A91CF /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		2559490E2B2F04A2007A91CF /* FlightDTO+Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightDTO+Flight.swift"; sourceTree = "<group>"; };
 		255949102B2F074F007A91CF /* GetFlightsDTO+FlightDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFlightsDTO+FlightDTO.swift"; sourceTree = "<group>"; };
+		255949132B2F7EB7007A91CF /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		257DA9F62B002522003B0AFA /* Airport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		257DA9F92B002522003B0AFA /* AirportApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportApp.swift; sourceTree = "<group>"; };
 		257DA9FB2B002522003B0AFA /* FlightsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsListView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				257DAA0B2B002524003B0AFA /* AirportTests.swift */,
+				255949132B2F7EB7007A91CF /* DateTests.swift */,
 			);
 			path = AirportTests;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				257DAA0C2B002524003B0AFA /* AirportTests.swift in Sources */,
+				255949142B2F7EB7007A91CF /* DateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
