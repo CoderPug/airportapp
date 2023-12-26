@@ -11,3 +11,19 @@ extension FlightsContent {
   }
 
 }
+
+extension FlightsContent {
+
+  func getYesterdayFlights() -> [Flight] {
+    return self.flights[.yesterday] ?? []
+  }
+
+  func getTodayFlights() -> [Flight] {
+    return self.flights[.today] ?? []
+  }
+
+  func getTomorrowFlights() -> [Flight] {
+    return self.flights[.tomorrow] ?? []
+  }
+
+}

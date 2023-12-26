@@ -7,13 +7,12 @@ extension FlightsListView {
     private let flightsService: FlightsServiceProtocol
     private var flightsContent: FlightsContent
 
-    @Published var flights: [Flight]
-    @Published var availableDays: [Day]
-    @Published var selectedDay: Day {
-      didSet {
-        self.flights = self.flightsContent.flights[selectedDay] ?? []
-      }
-    }
+    @Published var allFlights: [Flight]
+    @Published var yesterdayFlights: [Flight]
+    @Published var todayFlights: [Flight]
+    @Published var tomorrowFlights: [Flight]
+
+//    @Published var availableDays: [Day]
 
     init(
       flightsService: FlightsServiceProtocol = FlightsService(),
@@ -21,9 +20,12 @@ extension FlightsListView {
     ) {
       self.flightsService = flightsService
       self.flightsContent = .init(flights: [:])
-      self.flights = []
-      self.availableDays = availableModes
-      self.selectedDay = .today
+      self.allFlights = []
+      self.yesterdayFlights = []
+      self.todayFlights = []
+      self.tomorrowFlights = []
+//      self.availableDays = availableModes
+//      self.selectedDay = .today
 
       self.load()
     }
@@ -37,7 +39,9 @@ extension FlightsListView {
         case let .success(flightContent):
           DispatchQueue.main.async {
             self.flightsContent = flightContent
-            self.selectedDay = .today
+            self.yesterdayFlights = flightContent.getYesterdayFlights()
+            self.todayFlights = flightContent.getTodayFlights()
+            self.tomorrowFlights = flightContent.getTomorrowFlights()
           }
 
         case let .failure(error):

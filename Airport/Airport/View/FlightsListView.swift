@@ -36,82 +36,183 @@ struct FlightsListView: View {
   var body: some View {
     NavigationView {
       VStack {
-        Picker("Day Picker", selection: $viewModel.selectedDay) {
-          ForEach($viewModel.availableDays, id: \.self) { $day in
-            Text(day.displayText)
-          }
-        }
-        .padding(.all)
-        .pickerStyle(.segmented)
+//        Picker("Day Picker", selection: $viewModel.selectedDay) {
+//          ForEach($viewModel.availableDays, id: \.self) { $day in
+//            Text(day.displayText)
+//          }
+//        }
+//        .padding(.all)
+//        .pickerStyle(.segmented)
+
+//        Picker("Flight Type", selection: $viewModel.selectedDay) {
+//          ForEach(self.modes, id: \.self) { element in
+//            Text(element)
+//          }
+//        }
+//        .padding(.all)
+//        .pickerStyle(.segmented)
         List {
-          ForEach($viewModel.flights) { $flight in
-            VStack(alignment: .leading) {
-              HStack {
-                Spacer()
-                ZStack(alignment: .top) {
-                  UnevenRoundedRectangle(
-                    cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
-                  )
-                  .fill(getStateColor(state: flight.state))
-                  .frame(width: 140, height: 30)
-                  Text(flight.state)
-                    .font(.headline)
-                    .colorInvert()
-                    .padding(.top, 5)
+          Section {
+            ForEach($viewModel.yesterdayFlights) { $flight in
+              VStack(alignment: .leading) {
+                HStack {
+                  Spacer()
+                  ZStack(alignment: .top) {
+                    UnevenRoundedRectangle(
+                      cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
+                    )
+                    .fill(getStateColor(state: flight.state))
+                    .frame(width: 140, height: 30)
+                    Text(flight.state)
+                      .font(.headline)
+                      .colorInvert()
+                      .padding(.top, 5)
+                  }
+                  .padding(.top, -10)
                 }
-                .padding(.top, -10)
-              }
-              Text("Flight:")
-                .font(.caption)
-              Text(flight.code + " - " + flight.airline.abreviature)
-                .font(.title2)
-                .bold()
-              HStack() {
-                VStack(alignment: .leading) {
-                  Text("From:")
-                    .font(.caption)
-                  Text(flight.destination)
-                }
-                Spacer()
-                VStack(alignment: .center) {
-                  Text("Hour:")
-                    .font(.caption)
-                  Text(flight.dateTime.scheduled?.displayText() ?? "-")
+                Text("Flight:")
+                  .font(.caption)
+                Text(flight.code + " - " + flight.airline.abreviature)
+                  .font(.title2)
+                  .bold()
+                HStack() {
+                  VStack(alignment: .leading) {
+                    Text("From:")
+                      .font(.caption)
+                    Text(flight.destination)
+                  }
+                  Spacer()
+                  VStack(alignment: .center) {
+                    Text("Hour:")
+                      .font(.caption)
+                    Text(flight.dateTime.scheduled?.displayText() ?? "-")
+                  }
                 }
               }
             }
+          } header: { 
+            Text(Day.yesterday.displayText)
           }
+          .headerProminence(.increased)
+
+          Section {
+            ForEach($viewModel.todayFlights) { $flight in
+              VStack(alignment: .leading) {
+                HStack {
+                  Spacer()
+                  ZStack(alignment: .top) {
+                    UnevenRoundedRectangle(
+                      cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
+                    )
+                    .fill(getStateColor(state: flight.state))
+                    .frame(width: 140, height: 30)
+                    Text(flight.state)
+                      .font(.headline)
+                      .colorInvert()
+                      .padding(.top, 5)
+                  }
+                  .padding(.top, -10)
+                }
+                Text("Flight:")
+                  .font(.caption)
+                Text(flight.code + " - " + flight.airline.abreviature)
+                  .font(.title2)
+                  .bold()
+                HStack() {
+                  VStack(alignment: .leading) {
+                    Text("From:")
+                      .font(.caption)
+                    Text(flight.destination)
+                  }
+                  Spacer()
+                  VStack(alignment: .center) {
+                    Text("Hour:")
+                      .font(.caption)
+                    Text(flight.dateTime.scheduled?.displayText() ?? "-")
+                  }
+                }
+              }
+            }
+          } header: {
+            Text(Day.today.displayText)
+          }
+          .headerProminence(.increased)
+
+          Section {
+            ForEach($viewModel.tomorrowFlights) { $flight in
+              VStack(alignment: .leading) {
+                HStack {
+                  Spacer()
+                  ZStack(alignment: .top) {
+                    UnevenRoundedRectangle(
+                      cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
+                    )
+                    .fill(getStateColor(state: flight.state))
+                    .frame(width: 140, height: 30)
+                    Text(flight.state)
+                      .font(.headline)
+                      .colorInvert()
+                      .padding(.top, 5)
+                  }
+                  .padding(.top, -10)
+                }
+                Text("Flight:")
+                  .font(.caption)
+                Text(flight.code + " - " + flight.airline.abreviature)
+                  .font(.title2)
+                  .bold()
+                HStack() {
+                  VStack(alignment: .leading) {
+                    Text("From:")
+                      .font(.caption)
+                    Text(flight.destination)
+                  }
+                  Spacer()
+                  VStack(alignment: .center) {
+                    Text("Hour:")
+                      .font(.caption)
+                    Text(flight.dateTime.scheduled?.displayText() ?? "-")
+                  }
+                }
+              }
+            }
+          } header: {
+            Text(Day.tomorrow.displayText)
+          }
+          .headerProminence(.increased)
         }
+//        .listStyle(.inset)
         .navigationTitle("Vuelos")
+//        .navigationBarTitleDisplayMode(.inline)
       }
     }
   }
 
 }
 
-#Preview {
-  let sampleViewModel = FlightsListView.FlightsViewModel()
-  sampleViewModel.flights = [
-    .init(
-      code: "LA2242",
-      number: "2242",
-      airline: .init(abreviature: "LATAM", name: "LA"),
-      operation: .arrival,
-      traffic: .international,
-      state: "EMBARCANDO",
-      dateTime: .init(scheduled: nil, estimated: nil, real: nil),
-      destination: "LIMA"
-    ),
-    .init(
-      code: "LA2142",
-      number: "2142",
-      airline: .init(abreviature: "LAT", name: "LATAM"),
-      operation: .departure,
-      traffic: .national,
-      state: "DEMORADO",
-      dateTime: .init(scheduled: nil, estimated: nil, real: nil),
-      destination: "JAUJA"
-    )
-  ]
-  return FlightsListView(viewModel: sampleViewModel)
-}
+//#Preview {
+//  let sampleViewModel = FlightsListView.FlightsViewModel()
+//  sampleViewModel.flights = [
+//    .init(
+//      code: "LA2242",
+//      number: "2242",
+//      airline: .init(abreviature: "LATAM", name: "LA"),
+//      operation: .arrival,
+//      traffic: .international,
+//      state: "EMBARCANDO",
+//      dateTime: .init(scheduled: nil, estimated: nil, real: nil),
+//      destination: "LIMA"
+//    ),
+//    .init(
+//      code: "LA2142",
+//      number: "2142",
+//      airline: .init(abreviature: "LAT", name: "LATAM"),
+//      operation: .departure,
+//      traffic: .national,
+//      state: "DEMORADO",
+//      dateTime: .init(scheduled: nil, estimated: nil, real: nil),
+//      destination: "JAUJA"
+//    )
+//  ]
+//  return FlightsListView(viewModel: sampleViewModel)
+//}
