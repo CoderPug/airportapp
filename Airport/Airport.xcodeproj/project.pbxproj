@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2559490D2B2EFD13007A91CF /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2559490C2B2EFD13007A91CF /* Date+Extension.swift */; };
-		2559490F2B2F04A2007A91CF /* FlightDTO+Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2559490E2B2F04A2007A91CF /* FlightDTO+Flight.swift */; };
+		2559490F2B2F04A2007A91CF /* Flight+FlightDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2559490E2B2F04A2007A91CF /* Flight+FlightDTO.swift */; };
 		255949112B2F074F007A91CF /* GetFlightsDTO+FlightDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255949102B2F074F007A91CF /* GetFlightsDTO+FlightDTO.swift */; };
 		255949142B2F7EB7007A91CF /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255949132B2F7EB7007A91CF /* DateTests.swift */; };
 		257DA9FA2B002522003B0AFA /* AirportApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DA9F92B002522003B0AFA /* AirportApp.swift */; };
@@ -32,11 +32,12 @@
 		257DAA412B0039D1003B0AFA /* FlightsDataDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA402B0039D1003B0AFA /* FlightsDataDTO.swift */; };
 		257DAA442B015073003B0AFA /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA432B015073003B0AFA /* Flight.swift */; };
 		257DAA462B01507E003B0AFA /* FlightsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA452B01507E003B0AFA /* FlightsContent.swift */; };
-		257DAA482B015EAF003B0AFA /* FlightContent+Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA472B015EAF003B0AFA /* FlightContent+Parsing.swift */; };
+		257DAA482B015EAF003B0AFA /* FlightContent+GetFlightsDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA472B015EAF003B0AFA /* FlightContent+GetFlightsDTO.swift */; };
 		257DAA4B2B017B9C003B0AFA /* DateFormatter+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA4A2B017B9C003B0AFA /* DateFormatter+Custom.swift */; };
 		257DAA4D2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257DAA4C2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift */; };
 		25A789F42B0575FD0051C362 /* FlightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A789F32B0575FD0051C362 /* FlightsViewModel.swift */; };
 		25A789F62B0576620051C362 /* FlightsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A789F52B0576620051C362 /* FlightsServiceProtocol.swift */; };
+		25B8D07D2D1F5B7F005C5E6D /* GET_flights.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B8D07C2D1F5B71005C5E6D /* GET_flights.json */; };
 		25C751372B1D3FE800A6586E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C751362B1D3FE800A6586E /* Day.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +60,7 @@
 
 /* Begin PBXFileReference section */
 		2559490C2B2EFD13007A91CF /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
-		2559490E2B2F04A2007A91CF /* FlightDTO+Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightDTO+Flight.swift"; sourceTree = "<group>"; };
+		2559490E2B2F04A2007A91CF /* Flight+FlightDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+FlightDTO.swift"; sourceTree = "<group>"; };
 		255949102B2F074F007A91CF /* GetFlightsDTO+FlightDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GetFlightsDTO+FlightDTO.swift"; sourceTree = "<group>"; };
 		255949132B2F7EB7007A91CF /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
 		257DA9F62B002522003B0AFA /* Airport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Airport.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,11 +88,12 @@
 		257DAA402B0039D1003B0AFA /* FlightsDataDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsDataDTO.swift; sourceTree = "<group>"; };
 		257DAA432B015073003B0AFA /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		257DAA452B01507E003B0AFA /* FlightsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsContent.swift; sourceTree = "<group>"; };
-		257DAA472B015EAF003B0AFA /* FlightContent+Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightContent+Parsing.swift"; sourceTree = "<group>"; };
+		257DAA472B015EAF003B0AFA /* FlightContent+GetFlightsDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightContent+GetFlightsDTO.swift"; sourceTree = "<group>"; };
 		257DAA4A2B017B9C003B0AFA /* DateFormatter+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Custom.swift"; sourceTree = "<group>"; };
 		257DAA4C2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Utils.swift"; sourceTree = "<group>"; };
 		25A789F32B0575FD0051C362 /* FlightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewModel.swift; sourceTree = "<group>"; };
 		25A789F52B0576620051C362 /* FlightsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsServiceProtocol.swift; sourceTree = "<group>"; };
+		25B8D07C2D1F5B71005C5E6D /* GET_flights.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GET_flights.json; sourceTree = "<group>"; };
 		25C751362B1D3FE800A6586E /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,14 +122,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		255949122B2F0766007A91CF /* Parsing */ = {
+		255949122B2F0766007A91CF /* Mapping */ = {
 			isa = PBXGroup;
 			children = (
-				257DAA472B015EAF003B0AFA /* FlightContent+Parsing.swift */,
-				2559490E2B2F04A2007A91CF /* FlightDTO+Flight.swift */,
+				257DAA472B015EAF003B0AFA /* FlightContent+GetFlightsDTO.swift */,
+				2559490E2B2F04A2007A91CF /* Flight+FlightDTO.swift */,
 				255949102B2F074F007A91CF /* GetFlightsDTO+FlightDTO.swift */,
 			);
-			path = Parsing;
+			path = Mapping;
 			sourceTree = "<group>";
 		};
 		257DA9ED2B002522003B0AFA = {
@@ -179,6 +181,7 @@
 		257DAA0A2B002524003B0AFA /* AirportTests */ = {
 			isa = PBXGroup;
 			children = (
+				25B8D07C2D1F5B71005C5E6D /* GET_flights.json */,
 				257DAA0B2B002524003B0AFA /* AirportTests.swift */,
 				255949132B2F7EB7007A91CF /* DateTests.swift */,
 			);
@@ -212,7 +215,7 @@
 				257DAA382B0030C1003B0AFA /* FlightsAPI.swift */,
 				25A789F52B0576620051C362 /* FlightsServiceProtocol.swift */,
 				257DAA342B002A01003B0AFA /* FlightsService.swift */,
-				255949122B2F0766007A91CF /* Parsing */,
+				255949122B2F0766007A91CF /* Mapping */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25B8D07D2D1F5B7F005C5E6D /* GET_flights.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,7 +401,7 @@
 			files = (
 				257DAA3B2B0030FC003B0AFA /* DateFlightsDTO.swift in Sources */,
 				255949112B2F074F007A91CF /* GetFlightsDTO+FlightDTO.swift in Sources */,
-				257DAA482B015EAF003B0AFA /* FlightContent+Parsing.swift in Sources */,
+				257DAA482B015EAF003B0AFA /* FlightContent+GetFlightsDTO.swift in Sources */,
 				257DAA412B0039D1003B0AFA /* FlightsDataDTO.swift in Sources */,
 				257DAA3D2B00310B003B0AFA /* ContentFlightsDTO.swift in Sources */,
 				257DAA442B015073003B0AFA /* Flight.swift in Sources */,
@@ -411,7 +415,7 @@
 				25A789F62B0576620051C362 /* FlightsServiceProtocol.swift in Sources */,
 				257DAA372B002D3E003B0AFA /* GetFlightsDTO.swift in Sources */,
 				257DAA2D2B0027AF003B0AFA /* Endpoint.swift in Sources */,
-				2559490F2B2F04A2007A91CF /* FlightDTO+Flight.swift in Sources */,
+				2559490F2B2F04A2007A91CF /* Flight+FlightDTO.swift in Sources */,
 				257DAA2F2B002834003B0AFA /* Client.swift in Sources */,
 				257DAA462B01507E003B0AFA /* FlightsContent.swift in Sources */,
 				257DAA312B0028C4003B0AFA /* Server.swift in Sources */,

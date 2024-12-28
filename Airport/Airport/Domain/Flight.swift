@@ -18,9 +18,17 @@ struct Flight {
   }
 
   struct DateTime {
+
+    enum Relative {
+      case today
+      case yesterday
+      case tomorrow
+    }
+
     let scheduled: Date?
     let estimated: Date?
     let real: Date?
+    let relative: Flight.DateTime.Relative
   }
 
   let code: String

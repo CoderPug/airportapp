@@ -36,154 +36,58 @@ struct FlightsListView: View {
   var body: some View {
     NavigationView {
       VStack {
-//        Picker("Day Picker", selection: $viewModel.selectedDay) {
-//          ForEach($viewModel.availableDays, id: \.self) { $day in
-//            Text(day.displayText)
-//          }
-//        }
-//        .padding(.all)
-//        .pickerStyle(.segmented)
-
-//        Picker("Flight Type", selection: $viewModel.selectedDay) {
-//          ForEach(self.modes, id: \.self) { element in
-//            Text(element)
-//          }
-//        }
-//        .padding(.all)
-//        .pickerStyle(.segmented)
-        List {
-          Section {
-            ForEach($viewModel.yesterdayFlights) { $flight in
-              VStack(alignment: .leading) {
-                HStack {
-                  Spacer()
-                  ZStack(alignment: .top) {
-                    UnevenRoundedRectangle(
-                      cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
-                    )
-                    .fill(getStateColor(state: flight.state))
-                    .frame(width: 140, height: 30)
-                    Text(flight.state)
-                      .font(.headline)
-                      .colorInvert()
-                      .padding(.top, 5)
-                  }
-                  .padding(.top, -10)
-                }
-                Text("Flight:")
-                  .font(.caption)
-                Text(flight.code + " - " + flight.airline.abreviature)
-                  .font(.title2)
-                  .bold()
-                HStack() {
-                  VStack(alignment: .leading) {
-                    Text("From:")
-                      .font(.caption)
-                    Text(flight.destination)
-                  }
-                  Spacer()
-                  VStack(alignment: .center) {
-                    Text("Hour:")
-                      .font(.caption)
-                    Text(flight.dateTime.scheduled?.displayText() ?? "-")
-                  }
-                }
+        ScrollViewReader { proxy in
+          List {
+            Section {
+              ForEach($viewModel.arrivals) { $flight in
+                self.styledFlight(flight)
               }
+              .id(0)
+            } header: {
+              Text("Llegadas")
             }
-          } header: { 
-            Text(Day.yesterday.displayText)
+            .headerProminence(.increased)
           }
-          .headerProminence(.increased)
-
-          Section {
-            ForEach($viewModel.todayFlights) { $flight in
-              VStack(alignment: .leading) {
-                HStack {
-                  Spacer()
-                  ZStack(alignment: .top) {
-                    UnevenRoundedRectangle(
-                      cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
-                    )
-                    .fill(getStateColor(state: flight.state))
-                    .frame(width: 140, height: 30)
-                    Text(flight.state)
-                      .font(.headline)
-                      .colorInvert()
-                      .padding(.top, 5)
-                  }
-                  .padding(.top, -10)
-                }
-                Text("Flight:")
-                  .font(.caption)
-                Text(flight.code + " - " + flight.airline.abreviature)
-                  .font(.title2)
-                  .bold()
-                HStack() {
-                  VStack(alignment: .leading) {
-                    Text("From:")
-                      .font(.caption)
-                    Text(flight.destination)
-                  }
-                  Spacer()
-                  VStack(alignment: .center) {
-                    Text("Hour:")
-                      .font(.caption)
-                    Text(flight.dateTime.scheduled?.displayText() ?? "-")
-                  }
-                }
-              }
-            }
-          } header: {
-            Text(Day.today.displayText)
-          }
-          .headerProminence(.increased)
-
-          Section {
-            ForEach($viewModel.tomorrowFlights) { $flight in
-              VStack(alignment: .leading) {
-                HStack {
-                  Spacer()
-                  ZStack(alignment: .top) {
-                    UnevenRoundedRectangle(
-                      cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
-                    )
-                    .fill(getStateColor(state: flight.state))
-                    .frame(width: 140, height: 30)
-                    Text(flight.state)
-                      .font(.headline)
-                      .colorInvert()
-                      .padding(.top, 5)
-                  }
-                  .padding(.top, -10)
-                }
-                Text("Flight:")
-                  .font(.caption)
-                Text(flight.code + " - " + flight.airline.abreviature)
-                  .font(.title2)
-                  .bold()
-                HStack() {
-                  VStack(alignment: .leading) {
-                    Text("From:")
-                      .font(.caption)
-                    Text(flight.destination)
-                  }
-                  Spacer()
-                  VStack(alignment: .center) {
-                    Text("Hour:")
-                      .font(.caption)
-                    Text(flight.dateTime.scheduled?.displayText() ?? "-")
-                  }
-                }
-              }
-            }
-          } header: {
-            Text(Day.tomorrow.displayText)
-          }
-          .headerProminence(.increased)
         }
-//        .listStyle(.inset)
         .navigationTitle("Vuelos")
-//        .navigationBarTitleDisplayMode(.inline)
+      }
+    }
+  }
+
+  @ViewBuilder func styledFlight(_ flight: Flight) -> some View {
+    VStack(alignment: .leading) {
+      HStack {
+        Spacer()
+        ZStack(alignment: .top) {
+          UnevenRoundedRectangle(
+            cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
+          )
+          .fill(getStateColor(state: flight.state))
+          .frame(width: 140, height: 30)
+          Text(flight.state)
+            .font(.headline)
+            .colorInvert()
+            .padding(.top, 5)
+        }
+        .padding(.top, -10)
+      }
+      Text("Flight:")
+        .font(.caption)
+      Text(flight.code + " - " + flight.airline.abreviature)
+        .font(.title2)
+        .bold()
+      HStack() {
+        VStack(alignment: .leading) {
+          Text("From:")
+            .font(.caption)
+          Text(flight.destination)
+        }
+        Spacer()
+        VStack(alignment: .center) {
+          Text("Hour:")
+            .font(.caption)
+          Text(flight.dateTime.scheduled?.displayText() ?? "-")
+        }
       }
     }
   }

@@ -6,16 +6,16 @@ extension Date {
     case today
     case yesterday
     case tomorrow
-  }
 
-  static func getStringDates(for day: Relative) -> String? {
-    switch day {
-    case .today:
-      return getTodayStringDate()
-    case .tomorrow:
-      return getTomorrowStringDate()
-    case .yesterday:
-      return getYesterdayStringDate()
+    var stringDate: String? {
+      switch self {
+        case .today:
+          return getTodayStringDate()
+        case .yesterday:
+          return getYesterdayStringDate()
+        case .tomorrow:
+          return getTomorrowStringDate()
+      }
     }
   }
 
