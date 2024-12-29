@@ -81,6 +81,20 @@ extension Flight.State {
       default: self = .unknown
     }
   }
+
+  var text: String {
+    switch self {
+      case .scheduled: return "Programado"
+      case .landed: return "Aterrizó"
+      case .confirmed: return "Confirmado"
+      case .delayed: return "Demorado"
+      case .boarding: return "Embarcando"
+      case .lastCall: return "Última llamada"
+      case .boardingEnd: return "Fin de embarque"
+      case .canceled: return "Cancelado"
+      case .unknown: return "Desconocido"
+    }
+  }
 }
 
 // MARK: - Date

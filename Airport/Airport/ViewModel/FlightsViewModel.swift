@@ -6,8 +6,8 @@ extension FlightsListView {
 
     private let flightsService: FlightsServiceProtocol
 
-    @Published var arrivals: [Flight] = []
-    @Published var departures: [Flight] = []
+    @Published var arrivals: [FlightsSection] = []
+    @Published var departures: [FlightsSection] = []
 
     init(flightsService: FlightsServiceProtocol = FlightsService()) {
       self.flightsService = flightsService

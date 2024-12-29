@@ -8,6 +8,10 @@ extension Flight: Identifiable {
   }
 }
 
+extension FlightsSection: Identifiable {
+  var id: UUID { UUID() }
+}
+
 struct FlightsListView: View {
 
   @StateObject internal var viewModel = FlightsViewModel()
@@ -23,72 +27,76 @@ struct FlightsListView: View {
       for: .normal
     )
     UISegmentedControl.appearance().setTitleTextAttributes(
-      [.foregroundColor : UIColor(cgColor: Color(hex: 0xFFC530).cgColor!)], for: .selected
+      [
+        .font : UIFont(name: "Inter 18pt Bold", size: 13.0) ?? .systemFont(ofSize: 13.0),
+        .foregroundColor : UIColor(cgColor: Color(hex: 0xFFC530).cgColor!)
+      ],
+      for: .selected
     )
   }
 
   var body: some View {
     NavigationView {
+
       VStack {
+
+        VStack {
+          VStack(alignment: .leading) {
+            Text("Aeropuerto Internacional Jorge Chávez")
+              .font(.custom("Inter 18pt Bold", size: 16.0))
+              .foregroundStyle(.white)
+
+            Text("Vuelos")
+              .font(.custom("Inter 18pt Bold", size: 36.0))
+              .foregroundStyle(.white)
+          }
+          .frame(width: UIScreen.main.bounds.width - 90, alignment: .leading)
+
+          VStack(alignment: .center, spacing: 15) {
+            Picker("", selection: $flightsMode) {
+              Text("Salidas").tag(0)
+              Text("Llegadas").tag(1)
+            }
+            .pickerStyle(.segmented)
+            .frame(width: 200)
+          }
+        }
+        .frame(width: UIScreen.main.bounds.width)
+        .textCase(nil)
+        .padding(.init(top: 20, leading: 0, bottom: 0, trailing: 0))
+
         ScrollViewReader { proxy in
           List {
-            Section {
-              let flights = $flightsMode.wrappedValue == 0 ? viewModel.departures : viewModel.arrivals
-              ForEach(flights) { flight in
-                flightview(flight)
-              }
-              .id(0)
-              .listRowSeparator(.hidden)
-            } header: {
-              Spacer()
-              VStack {
-                VStack(alignment: .leading) {
-                  Text("Aeropuerto Internacional Jorge Chavez")
-                    .font(.custom("Inter 18pt Bold", size: 16.0))
-                    .foregroundStyle(.white)
-
-                  Text("Vuelos")
-                    .font(.custom("Inter 18pt Bold", size: 36.0))
-                    .foregroundStyle(.white)
+            let flightsSections = $flightsMode.wrappedValue == 0 ? viewModel.departures : viewModel.arrivals
+            ForEach(flightsSections) { flightSection in
+              Section {
+                ForEach(flightSection.flights) { flight in
+                  flightview(flight)
                 }
-                .frame(width: UIScreen.main.bounds.width - 90, alignment: .leading)
-//                .border(.red)
-
+                .id(0)
+                .listRowSeparator(.hidden)
+              } header: {
                 VStack(alignment: .center, spacing: 15) {
-
-                  Picker("", selection: $flightsMode) {
-                     Text("Salidas").tag(0)
-                     Text("Llegadas").tag(1)
-                   }
-                  .pickerStyle(.segmented)
-                  .frame(width: 200)
-
-                  Text("21 de Diciembre")
-                    .font(.custom("Alata-Regular", size: 14.0))
+                  Text(flightSection.title)
+                    .font(.custom("Inter 18pt SemiBold", size: 13.0))
                     .foregroundStyle(.white)
-                    .padding(.init(top: 5, leading: 15, bottom: 5, trailing: 15))
+                    .padding(.init(top: 7, leading: 15, bottom: 7, trailing: 15))
                     .background(Color(hex: 0x000000, opacity: 0.07))
                     .cornerRadius(5)
                 }
-//                .border(.red)
-
+                .frame(width: UIScreen.main.bounds.width)
+                .textCase(nil)
               }
-              .frame(width: UIScreen.main.bounds.width)
-              .textCase(nil)
-              .padding()
-//              .border(.red)
-
-              Spacer()
+              .headerProminence(.increased)
             }
-            .headerProminence(.increased)
           }
           .scrollContentBackground(.hidden)
-          .background(Image("header-background"))
-          .background(Color(hex: 0xF6DE64))
         }
+        .padding(.init(top: -5, leading: 0, bottom: 0, trailing: 0))
       }
+      .background(Image("header-background"))
+      .background(Color(hex: 0xF6DE64))
     }
-    .preferredColorScheme(.light)
   }
 
 }

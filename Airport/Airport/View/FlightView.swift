@@ -2,15 +2,15 @@ import SwiftUI
 
 func getColor(state: Flight.State) -> Color {
   switch state {
-  case .scheduled: return Color(red: 87.0/255.0, green: 204.0/255.0, blue: 153.0/255.0)
+  case .scheduled: return Color(hex: 0xCACACA)
   case .landed: return Color(hex: 0x459C41)
-  case .confirmed: return Color(red: 73.0/255.0, green: 88.0/255.0, blue: 103.0/255.0)
-  case .delayed: return Color(red: 255.0/255.0, green: 133.0/255.0, blue: 82.0/255.0)
-  case .boarding: return Color(red: 255.0/255.0, green: 200.0/255.0, blue: 87.0/255.0)
-  case .lastCall: return Color(red: 255.0/255.0, green: 200.0/255.0, blue: 87.0/255.0)
-  case .boardingEnd: return Color(red: 87.0/255.0, green: 204.0/255.0, blue: 153.0/255.0)
+  case .confirmed: return Color(hex: 0xCACACA)
+  case .delayed: return Color(hex: 0xFF9447)
+  case .boarding: return Color(hex: 0x459C41)
+  case .lastCall: return Color(hex: 0xFFC530)
+  case .boardingEnd: return Color(hex: 0x459C41)
   case .canceled: return Color(hex: 0xFF2D2D)
-  default: return Color(red: 73.0/255.0, green: 88.0/255.0, blue: 103.0/255.0)
+  default: return Color(hex: 0xCACACA)
   }
 }
 
@@ -21,10 +21,10 @@ func flightview(_ flight: Flight) -> some View {
     HStack {
       Spacer()
       ZStack(alignment: .top) {
-        Text(flight.state.rawValue.uppercased())
-          .font(.custom("Alata-Regular", size: 12.0))
+        Text(flight.state.text)
+          .font(.custom("Alata-Regular", size: 13.0))
           .colorInvert()
-          .padding(.init(top: 5, leading: 15, bottom: 5, trailing: 15))
+          .padding(.init(top: 7, leading: 15, bottom: 7, trailing: 15))
           .background(getColor(state: flight.state))
           .cornerRadius(5)
       }
