@@ -94,7 +94,7 @@ struct FlightsListView: View {
         }
         .padding(.init(top: -5, leading: 0, bottom: 0, trailing: 0))
       }
-      .background(Image("header-background"))
+      .background(Image("background"))
       .background(Color(hex: 0xF6DE64))
     }
   }
