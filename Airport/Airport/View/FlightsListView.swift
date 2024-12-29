@@ -11,6 +11,7 @@ extension Flight: Identifiable {
 struct FlightsListView: View {
 
   @StateObject internal var viewModel = FlightsViewModel()
+  @State private var flightsMode: Int = 0
 
   init() {
 
@@ -32,7 +33,8 @@ struct FlightsListView: View {
         ScrollViewReader { proxy in
           List {
             Section {
-              ForEach($viewModel.arrivals) { $flight in
+              let flights = $flightsMode.wrappedValue == 0 ? viewModel.departures : viewModel.arrivals
+              ForEach(flights) { flight in
                 flightview(flight)
               }
               .id(0)
@@ -54,7 +56,7 @@ struct FlightsListView: View {
 
                 VStack(alignment: .center, spacing: 15) {
 
-                  Picker("", selection: .constant(0)) {
+                  Picker("", selection: $flightsMode) {
                      Text("Salidas").tag(0)
                      Text("Llegadas").tag(1)
                    }

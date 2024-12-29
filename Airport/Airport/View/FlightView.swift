@@ -61,9 +61,9 @@ func flightview(_ flight: Flight) -> some View {
       Divider()
         .frame(maxWidth: .infinity, maxHeight: 1)
         .background(Color(hex: 0xF2F2F7))
-      }
-      .padding(.leading, 75)
-      .padding(.trailing, -10)
     }
+    .padding(.leading, 75)
+    .padding(.trailing, -10)
+  }
 
 }
