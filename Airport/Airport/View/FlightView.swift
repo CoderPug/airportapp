@@ -33,11 +33,11 @@ func flightview(_ flight: Flight) -> some View {
 
     HStack(alignment: .bottom) {
       VStack(alignment: .leading, spacing: -3) {
-        Text("12/12/2024")
+        Text(flight.dateTime.scheduled?.displayDate() ?? "-")
           .font(.custom("Alata-Regular", size: 12.0))
           .foregroundColor(.gray)
 
-        Text(flight.dateTime.scheduled?.displayText() ?? "-")
+        Text(flight.dateTime.scheduled?.displayHour() ?? "-")
           .font(.custom("Alata-Regular", size: 24.0))
           .bold()
       }

@@ -85,7 +85,13 @@ extension Flight.State {
 
 // MARK: - Date
 extension Date {
-  func displayText() -> String {
-    DateFormatter.displayFormatter.string(from: self)
+
+  func displayHour() -> String {
+    DateFormatter.displayFormatterHour.string(from: self)
   }
+
+  func displayDate() -> String {
+    DateFormatter.displayFormatterDate.string(from: self)
+  }
+
 }
