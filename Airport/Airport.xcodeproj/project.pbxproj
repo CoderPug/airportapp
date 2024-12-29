@@ -38,6 +38,12 @@
 		25A789F42B0575FD0051C362 /* FlightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A789F32B0575FD0051C362 /* FlightsViewModel.swift */; };
 		25A789F62B0576620051C362 /* FlightsServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A789F52B0576620051C362 /* FlightsServiceProtocol.swift */; };
 		25B8D07D2D1F5B7F005C5E6D /* GET_flights.json in Resources */ = {isa = PBXBuildFile; fileRef = 25B8D07C2D1F5B71005C5E6D /* GET_flights.json */; };
+		25B8D07F2D2039CD005C5E6D /* FlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B8D07E2D2039C8005C5E6D /* FlightView.swift */; };
+		25B8D0822D2075A2005C5E6D /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25B8D0812D2075A2005C5E6D /* Alata-Regular.ttf */; };
+		25B8D0852D20B579005C5E6D /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B8D0842D20B575005C5E6D /* Color+Hex.swift */; };
+		25B8D0882D212D1A005C5E6D /* Inter_18pt-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25B8D0862D212D1A005C5E6D /* Inter_18pt-Bold.ttf */; };
+		25B8D0892D212D1A005C5E6D /* Inter_18pt-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25B8D0872D212D1A005C5E6D /* Inter_18pt-Regular.ttf */; };
+		25B8D08B2D2132F4005C5E6D /* Inter_18pt-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25B8D08A2D2132F4005C5E6D /* Inter_18pt-SemiBold.ttf */; };
 		25C751372B1D3FE800A6586E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C751362B1D3FE800A6586E /* Day.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +100,13 @@
 		25A789F32B0575FD0051C362 /* FlightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsViewModel.swift; sourceTree = "<group>"; };
 		25A789F52B0576620051C362 /* FlightsServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsServiceProtocol.swift; sourceTree = "<group>"; };
 		25B8D07C2D1F5B71005C5E6D /* GET_flights.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GET_flights.json; sourceTree = "<group>"; };
+		25B8D07E2D2039C8005C5E6D /* FlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightView.swift; sourceTree = "<group>"; };
+		25B8D0812D2075A2005C5E6D /* Alata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alata-Regular.ttf"; sourceTree = "<group>"; };
+		25B8D0832D2075D7005C5E6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		25B8D0842D20B575005C5E6D /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		25B8D0862D212D1A005C5E6D /* Inter_18pt-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter_18pt-Bold.ttf"; sourceTree = "<group>"; };
+		25B8D0872D212D1A005C5E6D /* Inter_18pt-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter_18pt-Regular.ttf"; sourceTree = "<group>"; };
+		25B8D08A2D2132F4005C5E6D /* Inter_18pt-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter_18pt-SemiBold.ttf"; sourceTree = "<group>"; };
 		25C751362B1D3FE800A6586E /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +168,8 @@
 		257DA9F82B002522003B0AFA /* Airport */ = {
 			isa = PBXGroup;
 			children = (
+				25B8D0832D2075D7005C5E6D /* Info.plist */,
+				25B8D0802D207594005C5E6D /* Fonts */,
 				257DAA492B017B8D003B0AFA /* Extensions */,
 				257DAA262B0025F1003B0AFA /* Network */,
 				257DAA282B002602003B0AFA /* Model */,
@@ -236,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				257DA9FB2B002522003B0AFA /* FlightsListView.swift */,
+				25B8D07E2D2039C8005C5E6D /* FlightView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -253,6 +269,7 @@
 		257DAA492B017B8D003B0AFA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				25B8D0842D20B575005C5E6D /* Color+Hex.swift */,
 				257DAA4A2B017B9C003B0AFA /* DateFormatter+Custom.swift */,
 				257DAA4C2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift */,
 				2559490C2B2EFD13007A91CF /* Date+Extension.swift */,
@@ -266,6 +283,17 @@
 				25A789F32B0575FD0051C362 /* FlightsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		25B8D0802D207594005C5E6D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				25B8D0812D2075A2005C5E6D /* Alata-Regular.ttf */,
+				25B8D0862D212D1A005C5E6D /* Inter_18pt-Bold.ttf */,
+				25B8D0872D212D1A005C5E6D /* Inter_18pt-Regular.ttf */,
+				25B8D08A2D2132F4005C5E6D /* Inter_18pt-SemiBold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,8 +400,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25B8D0822D2075A2005C5E6D /* Alata-Regular.ttf in Resources */,
 				257DAA022B002523003B0AFA /* Preview Assets.xcassets in Resources */,
+				25B8D0882D212D1A005C5E6D /* Inter_18pt-Bold.ttf in Resources */,
+				25B8D0892D212D1A005C5E6D /* Inter_18pt-Regular.ttf in Resources */,
 				257DA9FE2B002523003B0AFA /* Assets.xcassets in Resources */,
+				25B8D08B2D2132F4005C5E6D /* Inter_18pt-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,10 +443,12 @@
 				257DAA352B002A01003B0AFA /* FlightsService.swift in Sources */,
 				257DA9FC2B002522003B0AFA /* FlightsListView.swift in Sources */,
 				257DAA4B2B017B9C003B0AFA /* DateFormatter+Custom.swift in Sources */,
+				25B8D07F2D2039CD005C5E6D /* FlightView.swift in Sources */,
 				257DAA4D2B01836E003B0AFA /* KeyedDecodingContainer+Utils.swift in Sources */,
 				25A789F62B0576620051C362 /* FlightsServiceProtocol.swift in Sources */,
 				257DAA372B002D3E003B0AFA /* GetFlightsDTO.swift in Sources */,
 				257DAA2D2B0027AF003B0AFA /* Endpoint.swift in Sources */,
+				25B8D0852D20B579005C5E6D /* Color+Hex.swift in Sources */,
 				2559490F2B2F04A2007A91CF /* Flight+FlightDTO.swift in Sources */,
 				257DAA2F2B002834003B0AFA /* Client.swift in Sources */,
 				257DAA462B01507E003B0AFA /* FlightsContent.swift in Sources */,
@@ -584,8 +618,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Airport/Preview Content\"";
+				DEVELOPMENT_TEAM = AV8MC3NDUW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Airport/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -620,8 +656,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Airport/Preview Content\"";
+				DEVELOPMENT_TEAM = AV8MC3NDUW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Airport/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

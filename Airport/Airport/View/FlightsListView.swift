@@ -12,25 +12,18 @@ struct FlightsListView: View {
 
   @StateObject internal var viewModel = FlightsViewModel()
 
-  func getStateColor(state: String) -> Color {
-    switch state {
-    case "PROGRAMADO", "ATERRIZO":
-      return Color(red: 87.0/255.0, green: 204.0/255.0, blue: 153.0/255.0)
-    case "CONFIRMADO":
-      return Color(red: 73.0/255.0, green: 88.0/255.0, blue: 103.0/255.0)
-    case "DEMORADO":
-      return Color(red: 255.0/255.0, green: 133.0/255.0, blue: 82.0/255.0)
-    case "EMBARCANDO":
-      return Color(red: 255.0/255.0, green: 200.0/255.0, blue: 87.0/255.0)
-    case "ULT LLAMAD":
-      return Color(red: 255.0/255.0, green: 200.0/255.0, blue: 87.0/255.0)
-    case "FIN EMBARQ":
-      return Color(red: 87.0/255.0, green: 204.0/255.0, blue: 153.0/255.0)
-    case "CANCELADO":
-      return Color(red: 249.0/255.0, green: 65.0/255.0, blue: 68.0/255.0)
-    default:
-      return Color(red: 73.0/255.0, green: 88.0/255.0, blue: 103.0/255.0)
-    }
+  init() {
+
+    UISegmentedControl.appearance().setTitleTextAttributes(
+      [
+        .font : UIFont(name: "Inter 18pt SemiBold", size: 13.0) ?? .systemFont(ofSize: 13.0),
+        .foregroundColor : UIColor.white
+      ],
+      for: .normal
+    )
+    UISegmentedControl.appearance().setTitleTextAttributes(
+      [.foregroundColor : UIColor(cgColor: Color(hex: 0xFFC530).cgColor!)], for: .selected
+    )
   }
 
   var body: some View {
@@ -40,56 +33,60 @@ struct FlightsListView: View {
           List {
             Section {
               ForEach($viewModel.arrivals) { $flight in
-                self.styledFlight(flight)
+                flightview(flight)
               }
               .id(0)
+              .listRowSeparator(.hidden)
             } header: {
-              Text("Llegadas")
+              Spacer()
+              VStack {
+                VStack(alignment: .leading) {
+                  Text("Aeropuerto Internacional Jorge Chavez")
+                    .font(.custom("Inter 18pt Bold", size: 16.0))
+                    .foregroundStyle(.white)
+
+                  Text("Vuelos")
+                    .font(.custom("Inter 18pt Bold", size: 36.0))
+                    .foregroundStyle(.white)
+                }
+                .frame(width: UIScreen.main.bounds.width - 90, alignment: .leading)
+//                .border(.red)
+
+                VStack(alignment: .center, spacing: 15) {
+
+                  Picker("", selection: .constant(0)) {
+                     Text("Salidas").tag(0)
+                     Text("Llegadas").tag(1)
+                   }
+                  .pickerStyle(.segmented)
+                  .frame(width: 200)
+
+                  Text("21 de Diciembre")
+                    .font(.custom("Alata-Regular", size: 14.0))
+                    .foregroundStyle(.white)
+                    .padding(.init(top: 5, leading: 15, bottom: 5, trailing: 15))
+                    .background(Color(hex: 0x000000, opacity: 0.07))
+                    .cornerRadius(5)
+                }
+//                .border(.red)
+
+              }
+              .frame(width: UIScreen.main.bounds.width)
+              .textCase(nil)
+              .padding()
+//              .border(.red)
+
+              Spacer()
             }
             .headerProminence(.increased)
           }
-        }
-        .navigationTitle("Vuelos")
-      }
-    }
-  }
-
-  @ViewBuilder func styledFlight(_ flight: Flight) -> some View {
-    VStack(alignment: .leading) {
-      HStack {
-        Spacer()
-        ZStack(alignment: .top) {
-          UnevenRoundedRectangle(
-            cornerRadii: .init(bottomLeading: 11, bottomTrailing: 11)
-          )
-          .fill(getStateColor(state: flight.state))
-          .frame(width: 140, height: 30)
-          Text(flight.state)
-            .font(.headline)
-            .colorInvert()
-            .padding(.top, 5)
-        }
-        .padding(.top, -10)
-      }
-      Text("Flight:")
-        .font(.caption)
-      Text(flight.code + " - " + flight.airline.abreviature)
-        .font(.title2)
-        .bold()
-      HStack() {
-        VStack(alignment: .leading) {
-          Text("From:")
-            .font(.caption)
-          Text(flight.destination)
-        }
-        Spacer()
-        VStack(alignment: .center) {
-          Text("Hour:")
-            .font(.caption)
-          Text(flight.dateTime.scheduled?.displayText() ?? "-")
+          .scrollContentBackground(.hidden)
+          .background(Image("header-background"))
+          .background(Color(hex: 0xF6DE64))
         }
       }
     }
+    .preferredColorScheme(.light)
   }
 
 }
